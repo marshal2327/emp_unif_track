@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     // UTILS
 
     async function compressImg(file) {
+    
         const img = await createImageBitmap(file);
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         return new Promise(resolve =>{
             canvas.toBlob(blob => {
                 resolve(blob);
-            },'image/jpeg', 0.8);
+            },'image/jpeg', 0.2);
         });
         
     }
@@ -164,7 +165,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             upic_box.style.display = 'block';
             form_datas.set('uimg', compImg);
         //     // console.log(Object.fromEntries(form_datas.entries()))
-            pic_btn.textContent = 'Captured';   
+            pic_btn.textContent = 'Captured';  
+            URL.revokeObjectURL(compImg); 
         // }
 
         // reader.readAsDataURL(img);
