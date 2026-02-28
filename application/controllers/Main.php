@@ -5,7 +5,7 @@ class Main extends CI_Controller{
     public function __cosntruct(){
         parent::__construct();
         
-        header("Access-Control-Allow-Origin:http://10.0.1.184:8082");
+        header("Access-Control-Allow-Origin:http://erp.crgarments.com:8082");
         header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
         header("Access-Control-Allow-Headers: Content-Type, Authorization"); 
     }
