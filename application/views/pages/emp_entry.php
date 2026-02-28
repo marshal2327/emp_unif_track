@@ -112,7 +112,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         <div id='design_box' class="emp_box">
                             <label for="">Designation</label>
                             <span>:</span>
-                            <p id='design_val' style='margin:0; padding:0px 5px;'>-</p>
+                            <p id='design_val' class="p text-center" style='margin:0; padding:0px 5px;'>-</p>
                         </div>
                     </div>
                 </div>

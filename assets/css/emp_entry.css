@@ -154,7 +154,6 @@
     grid-template-columns: 43% 5% 52%;
     /* border: 1px solid black; */
     justify-items: center;
-    align-items: center;
 }
 
 #emp_info_box span{
@@ -165,6 +164,7 @@
     font-size: 14px;
     font-family: 'Poppins', sans-serif;
     justify-self: start !important;
+
 }
 
 #emp_info_box p{
