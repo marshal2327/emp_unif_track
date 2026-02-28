@@ -260,6 +260,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
     save_entry_btn.addEventListener('click', async ()=>{
 
 
+        
+        if(!prebpy_val.value || !remarks_val.value){
+            alert("Fields shouldn't be Empty !!");
+            return
+        }
+
+        
         save_entry_btn.disabled=true;
         
         overlay.style.display='flex';
@@ -269,14 +276,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             overlay.style.opacity=1;
         }, 100);
         
-        
-        if(!prebpy_val.value || !remarks_val.value){
-            alert("Fields shouldn't be Empty !!");
-            return;
-        }
-        
-        
-        
+    
         if(!form_datas){
             alert('Fill All Details !!');
             return
