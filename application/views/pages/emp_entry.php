@@ -29,7 +29,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
         id='lottie'
         src="<?php echo base_url()?>assets/gif/loading.json"
         background='transparent'
-        speed='1'
+        speed='2'
         style='width:200px; height:200px;'
         loop='False'
         >   
