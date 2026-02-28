@@ -224,15 +224,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
     save_entry_btn.addEventListener('click', async ()=>{
 
 
-        
-
 
         if(!prebpy_val.value || !remarks_val.value){
             alert("Fields shouldn't be Empty !!");
             return;
         }
           
-        console.log(Object.fromEntries(form_datas.entries()));
+        // console.log(Object.fromEntries(form_datas.entries()));
 
 
         if(!form_datas){
@@ -262,7 +260,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 setTimeout(() => {
                     lottie.play();
                     overlay.style.opacity=1;
-                }, 100);
+                }, 50);
             
                 setInterval(() => {
                     overlay.style.opacity=0;
@@ -272,7 +270,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     window.location.reload();
                 }, 2000);
 
-                
                 
             }else{
                 alert('Save Failed : ', result['message']);
