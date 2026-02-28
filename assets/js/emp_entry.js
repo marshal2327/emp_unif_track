@@ -223,6 +223,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     save_entry_btn.addEventListener('click', async ()=>{
 
+        overlay.style.display='flex';
+        lottie.src=base_url+'assets/gif/loading.json';
+        setTimeout(() => {
+            lottie.play();
+            overlay.style.opacity=1;
+        }, 100);
 
 
         if(!prebpy_val.value || !remarks_val.value){
@@ -256,11 +262,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 console.log('Save Success');
 
                 // FOR ANIMATION
-                overlay.style.display='flex';
-                setTimeout(() => {
-                    lottie.play();
-                    overlay.style.opacity=1;
-                }, 50);
+                // overlay.style.display='flex';
+                // setTimeout(() => {
+                //     lottie.play();
+                //     overlay.style.opacity=1;
+                // }, 100);
+                lottie.src=base_url+'assets/gif/Success.json';
             
                 setInterval(() => {
                     overlay.style.opacity=0;
