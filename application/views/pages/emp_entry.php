@@ -162,7 +162,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                                 <div class="card">
 
                                     <div class="card-titile">
-                                        <form action="" onsubmit="e.preventDefault();" >    
+                                        <form id='uploadForm'>    
                                             <input class='form-control' type="file" id='upic_img_inp' name='upic_img'
                                             accept="image/*" capture="environment">
                                         </form>
@@ -200,10 +200,16 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
-
+    
     <script>
     let base_url = "<?php echo base_url()?>";
     let emp_datas = <?php echo json_encode($emp_datas)?>;
+    document.getElementById("uploadForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    });
+
+
+
     </script>
     <script src="<?php echo base_url()?>assets/js/emp_entry.js"></script>
 </body>
