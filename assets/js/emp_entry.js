@@ -1,0 +1,292 @@
+document.addEventListener('DOMContentLoaded', ()=>{
+    console.log('EMP ENTYR PAGE PARSED' );
+
+    console.log(base_url);
+    // console.log(emp_datas);
+
+    // GLOBAL VAR FOR SAVE ENTRY
+    let form_datas = new FormData();
+
+    // FOR SAVE TAGS
+    let prebpy_val = document.getElementById('prepby_val');
+    let remarks_val = document.getElementById('remarks_val');
+
+    // POINT THE INPUT CURSOR INITIALLY
+    remarks_val.onclick = ()=>{
+        // remarks_val.setSelectionRange(0,0);
+        // remarks_val.removeEventListener('click');
+    }
+
+
+    // UTILS
+    // CLOSE OPTION BOX WHEN CLICK CLOSE BUTTON
+    function closebyx(){   
+
+        emp_option.classList.remove('show');
+        emp_sel.value='';
+        input_img.src = base_url+'assets/images/downarrow.png'; 
+        emp_card.style.opacity=0;
+        entry_card.style.opacity=0;
+        pic_btn.textContent='Take Photo';
+        upic_img_val.src='';
+        upic_img_inp.value='';
+        upic_box.style.display='none';
+        prebpy_val.value='';
+        remarks_val.value='';
+
+        // CLEAR THE FORM DATAS
+        form_datas.forEach((v,k) => {
+            form_datas.delete(k);
+        });
+
+        console.log(form_datas);
+        
+        disables.forEach(dis => {
+            dis.disabled = true;
+        
+        });
+
+    }
+
+
+    // SELECT EMP ID
+    let emp_card = document.getElementById('emp_card');
+    let entry_card = document.getElementById('entry_card');
+    let emp_sel = document.getElementById('emp_sel');
+    let emp_option = document.getElementById('emp_options');
+    let input_img = document.querySelector('#input_box img');
+    let pic_btn = document.getElementById('pic_btn');
+    let disables = document.querySelectorAll('.disable'); 
+
+    let timeout;
+
+    emp_sel.addEventListener('input', ()=>{
+
+        clearTimeout(timeout);
+
+        emp_card.style.opacity=0;
+        entry_card.style.opacity=0;
+
+        timeout = setTimeout(() => {
+
+            if(emp_sel.value.trim() !== ''){
+
+                input_img.src= base_url+'assets/images/closebox.png';
+
+                input_img.addEventListener('click', closebyx);
+
+                let query = emp_sel.value.trim().toLowerCase();
+                emp_option.innerHTML='';
+                
+                // console.log(emp_sel.value);
+
+                let matches = emp_datas.filter(itm => String(itm.MID).trim().toLowerCase().includes(query));
+                // console.log(matches.length);
+
+                if(matches.length !== 0){
+                        
+                    matches.forEach(res => {
+                        let p = document.createElement('p');
+                        p.textContent = res.MID;
+                        p.id=res.CREMPSTMASTID;
+                        emp_option.appendChild(p);
+                        p.addEventListener('click',()=> fetch_emp(res));
+                    });
+                    
+                }else{
+                    let p = document.createElement('p');
+                    p.textContent = 'No User Found !!'
+                    p.style.color='#ff083f';
+                    emp_option.appendChild(p);
+                }
+
+                if(emp_option.classList.contains('show')) emp_option.classList.remove('show'); emp_option.classList.add('close');
+                if(emp_option.classList.contains('close')) emp_option.classList.remove('close'); emp_option.classList.add('show');
+
+            }else{
+                input_img.src=base_url+'assets/images/downarrow.png';
+                emp_option.classList.remove('show');
+            }
+
+        }, 300);
+
+    });
+
+    // FOR SHOW THE CAPTURED IMG
+    let upic_img_inp = document.getElementById('upic_img_inp');
+    let upic_box = document.getElementById('upic_box');
+    let upic_img_val = document.getElementById('upic_img_val');
+    
+    upic_img_inp.addEventListener('change', (d)=>{
+
+        upic_img_val.src='';
+        upic_box.style.display='none';
+
+        const img = d.target.files[0];
+
+        if(!img){
+            pic_btn.textContent = 'Take Photo';
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = ()=>{
+            upic_img_val.src = reader.result;
+            upic_box.style.display = 'block';
+            form_datas.set('uimg', d.target.files[0]);
+            // console.log(Object.fromEntries(form_datas.entries()))
+            pic_btn.textContent = 'Captured';   
+        }
+
+        reader.readAsDataURL(img);
+
+    });
+
+
+    
+    // SELECT EMP AND GET SHOW EMP DETAILS
+
+    let emp_img = document.getElementById('emp_img');
+    let empid_val = document.getElementById('empid_val');
+    let mcempid_val = document.getElementById('mcempid_val');
+    let dept_val = document.getElementById('dept_val');
+    let design_val = document.getElementById('design_val');
+
+
+
+    async function fetch_emp(res){
+
+        // console.log(res);
+        
+        // CLOSE ANIMATION
+        if(emp_option.classList.contains('show')) emp_option.classList.remove('show'); emp_option.classList.add('close');
+        
+        // PUT TEXT ON INPUT BOX
+        emp_sel.value = res.MID;
+
+        // GET USER DETAILS AND FILL ON UI
+        const result = await fetch(base_url+`Main/get_user_det?recid=${encodeURIComponent(res.CREMPSTMASTID)}&mcempid=${encodeURIComponent(res.MCEMPID)}`);
+        const data = await result.json();
+
+        if(data != null){   
+
+            
+            console.log(data);
+            
+            emp_img.src = data['user_img'][0].IMG ? 'data:image/'+ data['user_img'][0].FTYPE + ';base64,' + data['user_img'][0].IMG : base_url + 'assets/images/nouserimg.jpg';
+            empid_val.textContent = data['user_info'][0].EMPID ? String(data['user_info'][0].EMPID) : '-';
+            mcempid_val.textContent = data['user_info'][0].MCEMPID ? data['user_info'][0].MCEMPID : '-';
+            dept_val.textContent = data['user_info'][0].DEPT ? data['user_info'][0].DEPT : '-';
+            design_val.textContent = data['user_info'][0].DESIGNATION ? data['user_info'][0].DESIGNATION : '-';
+
+            if(data['user_info'].length > 0){
+                let user = data['user_info'][0];
+                
+                form_datas.set('recid', user.CREMPSTMASTID);
+                form_datas.set('empid', user.EMPID);
+                form_datas.set('mcempid', user.MCEMPID);
+                form_datas.set('dept', user.DEPT);
+                form_datas.set('design', user.DESIGNATION);
+                form_datas.set('uimg', null);
+                
+            }
+            // form_datas = {
+            //     recid: data['user_info'][0].CREMPSTMASTID,
+            //     empid: data['user_info'][0].EMPID,
+            //     mcempid: data['user_info'][0].MCEMPID,
+            //     dept: data['user_info'][0].DEPT,
+            //     design: data['user_info'][0].DESIGNATION
+            // };
+            
+            // console.log(Object.fromEntries(form_datas.entries()));
+
+            setTimeout(() => {
+                emp_card.style.opacity=1;
+                entry_card.style.opacity=1;
+
+                disables.forEach(dis => {
+                    dis.disabled = false;
+                
+                });
+
+            }, 250);
+        }
+        
+    }
+
+    // SAVE CREDENTIALS ON DB
+
+    let save_entry_btn = document.getElementById('save_entry_btn');
+    let overlay = document.getElementById('overlay');
+    let lottie = document.getElementById('lottie');
+
+    save_entry_btn.addEventListener('click', async ()=>{
+
+
+        
+
+
+        if(!prebpy_val.value || !remarks_val.value){
+            alert("Fields shouldn't be Empty !!");
+            return;
+        }
+          
+        console.log(Object.fromEntries(form_datas.entries()));
+
+
+        if(!form_datas){
+            alert('Fill All Details !!');
+            return
+        }
+
+        try{
+
+            const resp = await fetch(base_url+'Main/unif_entry', {
+                method :'POST',
+                body : form_datas
+            })
+
+            if(!resp.ok){
+                throw new Error('Post of Form Datas Failed!');
+            }
+
+            const result = await resp.json();
+            console.log(result);
+
+            if(result['status']){
+                console.log('Save Success');
+
+                // FOR ANIMATION
+                overlay.style.display='flex';
+                setTimeout(() => {
+                    lottie.play();
+                    overlay.style.opacity=1;
+                }, 100);
+            
+                setInterval(() => {
+                    overlay.style.opacity=0;
+                }, 1900);
+            
+                setInterval(() => {
+                    window.location.reload();
+                }, 2000);
+
+                
+                
+            }else{
+                alert('Save Failed : ', result['message']);
+            }
+
+            }
+            catch(err){
+                console.error('Post Failed', err);
+                alert('Error Occured :', err);
+            }
+
+
+
+    });
+
+
+})

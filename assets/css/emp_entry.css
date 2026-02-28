@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+#overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.2s ease;
+}
+
+#overlay p{
+    opacity: 0;
+    animation: show 1.5s ease-in forwards;
+}
+
+@keyframes show {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+#content_box{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+#content_box h5{    
+    font-size: 14px;
+}
+
+#navbar{
+    position: relative;
+}
+
+#navbar img{
+    position: absolute;
+    left: 2%;
+}
+
+#emp_selectbox{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+#input_box{
+    position: relative;
+    box-sizing: border-box;
+}
+
+#input_box img{
+    position: absolute;
+    top: 11%;
+    right: 1%;
+    transition: 0.2s;
+}
+
+
+#emp_selectbox #input_box input{
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 0px 5px;
+    transition: 0.3s;
+    font-size: 14px;
+    transition: 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+#emp_selectbox #input_box input:focus{
+    outline:  none;
+    box-shadow: 0px 0px 8px grey;
+}
+
+#emp_options{
+    max-height: 0;
+    /* max-height: 140px; */
+    border: 1px solid grey;
+    overflow-y: auto;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+}
+
+#emp_options.show{
+    max-height: 140px;
+    opacity: 1;
+}
+
+#emp_options.close{
+    max-height: 0;
+    opacity: 0;
+}
+
+
+#emp_options>p{
+    font-size: 13px;
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 4px 0px;
+    vertical-align: middle;
+    text-align: center;
+    scroll-snap-align: start;
+    transition: all 0.2s;
+}
+
+#emp_options>p:nth-child(even){
+    background: rgb(219, 218, 218);
+}
+
+#emp_options>p:active{
+    background: lightblue;
+}
+
+
+
+#emp_card .card-title{
+     box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+#emp_card .card-title img{
+    width: 100px;
+    height: 110px;
+    object-fit:cover;
+    scale: 1;
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px grey;
+}
+
+.emp_box{
+    display: grid;
+    grid-template-columns: 43% 5% 52%;
+    /* border: 1px solid black; */
+    justify-items: center;
+    align-items: center;
+}
+
+#emp_info_box span{
+    justify-self: end;
+}
+
+#emp_info_box label{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    justify-self: start !important;
+}
+
+#emp_info_box p{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    justify-self: center;
+}
+
+#prepby_box input{
+    border: none;
+    border-bottom: 1px solid grey;
+    transition: border-bottom 0.2s ease;
+}
+
+#remarks_box textarea{
+    transform: border 0.2s ease;
+    font-size: 14px;
+    text-align: left;
+}
+
+#remarks_box textarea:focus{
+    outline: none;
+    border: 1px solid rgb(7, 109, 182);
+}
+
+#prepby_box input:focus{
+    outline: none;
+    border-bottom: 1px solid rgb(7, 109, 182);
+    
+}
+
+/* ---------FOR TAKE PIC BOX-------------- */
+
+#pic_btn{
+    transition: all 0.2s ease;
+}
+
+#entry_card{
+    opacity: 0; 
+    transition: all 0.2s ease;
+}
+
+#emp_card{
+    opacity: 0;
+    transition: 0.2s;
+}
+
+
+#upic_box{
+    /* max-height:400px; */
+    display: none;
+}
+
+
+
+
