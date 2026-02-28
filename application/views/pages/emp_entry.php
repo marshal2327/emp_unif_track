@@ -9,7 +9,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMP UNIFORM ENTRY</title>
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/emp_entry.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/emp_entry.css?v=123">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,7 +112,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         <div id='design_box' class="emp_box">
                             <label for="">Designation</label>
                             <span>:</span>
-                            <p id='design_val' class="p text-center" style='margin:0; padding:0px 5px;'>-</p>
+                            <p id='design_val' style='margin:0; padding:0px 5px;'>-</p>
                         </div>
                     </div>
                 </div>
