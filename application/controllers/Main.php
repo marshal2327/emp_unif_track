@@ -49,7 +49,7 @@ class Main extends CI_Controller{
 
     }
 
-    
+
     public function unif_entry(){
 
         date_default_timezone_set('Asia/Kolkata');
@@ -76,43 +76,43 @@ class Main extends CI_Controller{
                 // $type = substr($_FILES['uimg']['type'],6);
 
                 // SET PUBLIC URL, BCZ FTP WORKS ON LOCALY(10.0.1.184) NET SO
-                // $target_url = "erp.crgarments.com:8082/empunif/assets/api/empunif_upload.php";
-                // echo '<pre>'; print_r($target_url);exit;
+                $target_url = "http://erp.crgarments.com:8082/empunif/assets/api/empunif_upload.php";
+                // echo '<pre>'; print_r($_FILES);exit;
 
-                $url = "./assets/images/entries/";
+                // $url = "./assets/images/entries/";
 
-                $from_path = $_FILES['uimg']['tmp_name'];
-                $to_path = $url.$filename;
-
-                move_uploaded_file($from_path, $to_path);
+                // $from_path = $_FILES['uimg']['tmp_name'];
+                // $to_path = $url.$filename;
 
                 // MOVE UPLOAD FILE CONCEPT
+                // move_uploaded_file($from_path, $to_path);
+
 
                 // CURL PROCESS
-            //     $ch = curl_init();
+                $ch = curl_init();
 
-            //     $post_fields = [
-            //         'uimg' => new CURLFILE($_FILES['uimg']['tmp_name'], $_FILES['uimg']['type'], $filename)
-            //     ];
+                $post_fields = [
+                    'uimg' => new CURLFILE($_FILES['uimg']['tmp_name'], $_FILES['uimg']['type'], $filename)
+                ];
 
-            //     curl_setopt($ch, CURLOPT_URL, $target_url);
-            //     curl_setopt($ch, CURLOPT_POST, true);
-            //     curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
-            //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_URL, $target_url);
+                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-            //     $response = curl_exec($ch);
+                $response = curl_exec($ch);
 
-            //     if(curl_errno($ch)){
+                if(curl_errno($ch)){
 
-            //         echo json_encode(array('status' => FALSE, 'message'=> curl_error($ch)));
-            //         return;
+                    echo json_encode(array('status' => FALSE, 'message'=> curl_error($ch)));
+                    return;
 
-            //     }else{
-            //         $res = json_decode($response, true);
-            //         // echo '<pre>'; print_r($res);
-            //     }   
+                }else{
+                    $res = json_decode($response, true);
+                    // echo '<pre>'; print_r($res);
+                }   
 
-            //     curl_close($ch);
+                curl_close($ch);
 
             }
 

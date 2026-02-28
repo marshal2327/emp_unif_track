@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         return new Promise(resolve =>{
             canvas.toBlob(blob => {
                 resolve(blob);
-            },'image/jpeg', 0.3);
+            },'image/jpeg', 0.4);
         });
         
     }
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         let blob = await compressImg(img);
         let compImg = new File([blob], "cap.jpeg", {type: "image/jpeg"});
-        console.log(compImg);
+        // console.log(compImg);
 
 
         // const reader = new FileReader();
@@ -254,29 +254,31 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     save_entry_btn.addEventListener('click', async ()=>{
 
+        
         save_entry_btn.disabled=true;
-
+        
         overlay.style.display='flex';
         // lottie.src=base_url+'assets/gif/loading.json';
         setTimeout(() => {
             lottie.play();
             overlay.style.opacity=1;
         }, 100);
-
-
+        
+        
         if(!prebpy_val.value || !remarks_val.value){
             alert("Fields shouldn't be Empty !!");
             return;
         }
-          
-        // console.log(Object.fromEntries(form_datas.entries()));
-
-
+        
+        
+        
         if(!form_datas){
             alert('Fill All Details !!');
             return
         }
 
+        // console.log(Object.fromEntries(form_datas.entries()));
+        
         try{
 
             const resp = await fetch(base_url+'Main/unif_entry', {
