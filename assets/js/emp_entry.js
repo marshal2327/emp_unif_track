@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             return
         }
 
-        // console.log(Object.fromEntries(form_datas.entries()));
+        console.log(Object.fromEntries(form_datas.entries()));
         
         try{
 
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 }, 1900);
             
                 setTimeout(() => {
-                    window.location.reload();
+                    // window.location.reload();
                 }, 2000);
 
                 

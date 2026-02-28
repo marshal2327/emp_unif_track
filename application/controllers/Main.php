@@ -64,7 +64,7 @@ class Main extends CI_Controller{
 
             $now = date('d-m-Y_H-i-s'); 
 
-            $filename = $_POST['mcempid'].'_'.$now.'.jpeg';     
+            $filename = !empty($_FILES['uimg']) ? $_POST['mcempid'].'_'.$now.'.jpeg' : '';     
             $cred['filename'] = $filename;
 
             // INSERT DATA TO DB
