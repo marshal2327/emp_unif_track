@@ -224,6 +224,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     save_entry_btn.addEventListener('click', async ()=>{
 
+        save_entry_btn.disabled=true;
+
         overlay.style.display='flex';
         // lottie.src=base_url+'assets/gif/loading.json';
         setTimeout(() => {
@@ -261,6 +263,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             if(result['status']){
                 console.log('Save Success');
+
+                save_entry_btn.disabled=false;
 
                 // FOR ANIMATION
                 // overlay.style.display='flex';
