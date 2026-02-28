@@ -267,14 +267,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 save_entry_btn.disabled=false;
 
                 // FOR ANIMATION
-                // overlay.style.display='flex';
-                // setTimeout(() => {
-                //     lottie.play();
-                //     overlay.style.opacity=1;
-                // }, 100);
-                lottie.load(base_url+'assets/gif/Success.json');
-                lottie.play();
-                save_label.textContent='Saved';
+                setTimeout(() => {
+                    lottie.load(base_url+'assets/gif/Success.json');
+                    lottie.play();
+                    save_label.textContent='Saved';
+                }, 100);
+               
             
                 setInterval(() => {
                     overlay.style.opacity=0;
