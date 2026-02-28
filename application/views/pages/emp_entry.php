@@ -162,8 +162,10 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                                 <div class="card">
 
                                     <div class="card-titile">
-                                        <input class='form-control' type="file" id='upic_img_inp' name='upic_img'
+                                        <form action="" onsubmit="e.preventDefault();" >    
+                                            <input class='form-control' type="file" id='upic_img_inp' name='upic_img'
                                             accept="image/*" capture="environment">
+                                        </form>
                                     </div>
 
                                     <div id='upic_box' class="card-body pb-2">
