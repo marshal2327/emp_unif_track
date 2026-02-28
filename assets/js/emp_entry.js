@@ -258,9 +258,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 throw new Error('Post of Form Datas Failed!');
             }
 
-            const result = await resp.text();
+            const result = await resp.json();
             console.log(result);
-            return
+            
 
             if(result['status']){
                 console.log('Save Success');

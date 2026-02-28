@@ -82,7 +82,9 @@ class Main extends CI_Controller{
                 
                 $type = substr($_FILES['uimg']['type'],6);
 
-                $target_url = base_url()."assets/api/empunif_upload.php";
+                // SET PUBLIC URL, BCZ FTP WORKS ON LOCALY(10.0.1.184) NET SO
+                $target_url = "erp.crgarments.com:8082/empunif/assets/api/empunif_upload.php";
+                // echo '<pre>'; print_r($target_url);exit;
 
                 // CURL PROCESS
                 $ch = curl_init();

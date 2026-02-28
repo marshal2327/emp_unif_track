@@ -31,15 +31,15 @@ class User_model extends CI_Model{
 
         // UF/HL/25-26/0001
 
-        $doc = $this->db->query("select max(docid) from uniftrackmast")->result();
+        $doc = $this->db->query("select max(docid)docid from uniftrackmast")->result();
         $docid = $doc[0]->DOCID ? $doc[0]->DOCID : 'UF/HL/25-26/0000';
 
         $inc = substr($docid,12)+1;
 
         $nxt_docid = "UF/HL/25-26/".str_pad($inc, 4,'0', STR_PAD_LEFT);
 
-        echo '<pre>'; print_r($docid);
-        echo '<pre>'; print_r($nxt_docid);
+        // echo '<pre>'; print_r($docid);
+        // echo '<pre>'; print_r($nxt_docid);
 
         // INSERT PROCESS
 
