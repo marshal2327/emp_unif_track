@@ -9,13 +9,13 @@
     height: 100%;
     position: absolute;
     inset: 0;
-    display: none;
+    display: none   ;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
     z-index: 1;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     transition: opacity 0.2s ease;
 }
 
