@@ -29,7 +29,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
         id='lottie'
         src="<?php echo base_url()?>assets/gif/loading.json"
         background='transparent'
-        speed='2'
+        speed='1'
         style='width:200px; height:200px;'
         loop='False'
         >   
@@ -135,10 +135,10 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                         <div id='capture_box' class="row m-0 mt-1 d-flex justify-content-between">
 
-                            <button disabled id='pic_btn' class=" disable btn btn-outline-none bg-primary shadow-sm text-white fw-bold "
+                            <button disabled id='pic_btn' class=" disable btn btn-outline-none bg-primary shadow text-white fw-bold "
                                 data-bs-toggle="modal" data-bs-target="#takePic"
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Take Photo</button>
-                            <button disabled id='save_entry_btn' class="disable btn btn-outline-none bg-success shadow-sm text-white fw-bold "
+                            <button disabled id='save_entry_btn' class="disable btn btn-outline-none bg-success shadow text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Submit</button>
 
                         </div>
