@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 setTimeout(() => {
                     lottie.load(base_url+'assets/gif/Success.json');
                     lottie.play();
-                    save_label.textContent='Saved';
+                    save_label.textContent='Saved Successfully !';
                 }, 100);
                
             
