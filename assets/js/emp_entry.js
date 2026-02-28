@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     async function fetch_emp(res){
 
-        // console.log(res);
+        console.log(res);   
         
         // CLOSE ANIMATION
         if(emp_option.classList.contains('show')) emp_option.classList.remove('show'); emp_option.classList.add('close');
@@ -199,19 +199,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const result = await fetch(base_url+`Main/get_user_det?recid=${encodeURIComponent(res.CREMPSTMASTID)}&mcempid=${encodeURIComponent(res.MCEMPID)}`);
         const data = await result.json();
 
+        // console.log(data);
+        // return
+        
         if(data != null){   
-
+            
             
             console.log(data);
+            // return  
             
-            emp_img.src = data['user_img'][0].IMG ? 'data:image/'+ data['user_img'][0].FTYPE + ';base64,' + data['user_img'][0].IMG : base_url + 'assets/images/nouserimg.jpg';
-            empid_val.textContent = data['user_info'][0].EMPID ? String(data['user_info'][0].EMPID) : '-';
-            mcempid_val.textContent = data['user_info'][0].MCEMPID ? data['user_info'][0].MCEMPID : '-';
-            dept_val.textContent = data['user_info'][0].DEPT ? data['user_info'][0].DEPT : '-';
-            design_val.textContent = data['user_info'][0].DESIGNATION ? data['user_info'][0].DESIGNATION : '-';
+            emp_img.src = data['user_img'].IMG ? 'data:image/'+ data['user_img'].FTYPE + ';base64,' + data['user_img'].IMG : base_url + 'assets/images/nouserimg.jpg';
+            empid_val.textContent = data['user_info'].EMPID ? String(data['user_info'].EMPID) : '-';
+            mcempid_val.textContent = data['user_info'].MCEMPID ? data['user_info'].MCEMPID : '-';
+            dept_val.textContent = data['user_info'].DEPT ? data['user_info'].DEPT : '-';
+            design_val.textContent = data['user_info'].DESIGNATION ? data['user_info'].DESIGNATION : '-';
 
-            if(data['user_info'].length > 0){
-                let user = data['user_info'][0];
+            if(data['user_info']['CREMPSTMASTID']){
+                let user = data['user_info'];
                 
                 form_datas.set('recid', user.CREMPSTMASTID);
                 form_datas.set('empid', user.EMPID);
@@ -228,8 +232,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
             //     dept: data['user_info'][0].DEPT,
             //     design: data['user_info'][0].DESIGNATION
             // };
-            
+
             // console.log(Object.fromEntries(form_datas.entries()));
+            
 
             setTimeout(() => {
                 emp_card.style.opacity=1;
@@ -254,7 +259,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     save_entry_btn.addEventListener('click', async ()=>{
 
-        
+
         save_entry_btn.disabled=true;
         
         overlay.style.display='flex';

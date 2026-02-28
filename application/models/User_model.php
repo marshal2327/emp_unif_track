@@ -15,12 +15,12 @@ class User_model extends CI_Model{
     // GET USER DET AND USER IMG BY ID
     public function emp_info($params){
 
-        $datas['user_info'] = $this->db->query("select crempstmastid, MCEMPID, initcap(EMPID) empid, initcap(DEPT) dept, initcap(designation) designation from crempstmast where appstatus = 'Live' 
-                                    and crempstmastid = ".$params['recid']." and upper(mcempid) = upper('".$params['mcempid']."') order by mcempid")->result_array();
+        $datas['user_info'] = $this->db->query("select crempstmastid, MCEMPID, initcap(EMPID) empid, TRIM(initcap(DEPT)) dept, TRIM(initcap(designation)) designation from crempstmast where appstatus = 'Live' 
+                                    and crempstmastid = ".$params['recid']." and upper(mcempid) = upper('".$params['mcempid']."') order by mcempid")->row_array();
 
-        $datas['user_img'] = $this->db->query("select img, ftype  from cremsimg WHERE RECORDID = '".$params['recid']."' " )->result_array();
+        $datas['user_img'] = $this->db->query("select img, ftype  from cremsimg WHERE RECORDID = ".$params['recid']." " )->row_array();
 
-        // echo "<pre>"; print_r($datas);exit;
+        // echo "<pre>"; print_r($datas);exit; 
         return $datas;
 
 

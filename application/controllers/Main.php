@@ -36,15 +36,22 @@ class Main extends CI_Controller{
             
             $result = $this->User_model->emp_info($params);
 
-            if(isset($result['user_img'])){
-                $lob = $result['user_img'][0]['IMG'];
-                $result['user_img'][0]['IMG'] = base64_encode($lob->load());
+            // echo '<pre>'; print_r($result['user_img']);
+            
+            if(!empty($result['user_img'])){
+
+                $lob = $result['user_img']['IMG'];
+                $result['user_img']['IMG'] = base64_encode($lob->load());
+                            // echo '<pre>'; print_r($result['user_img']);exit;
+                // echo 'TRUE';
                 echo json_encode($result);
+           
+     
             }else{
-                echo json_encode(NULL);
+                echo "<pre>"; print_r('IMG GET FAILED');
+                echo json_encode(array('status' => FALSE, 'message' => 'Img Get Failed'));
             }
-
-
+            
         }
 
     }
