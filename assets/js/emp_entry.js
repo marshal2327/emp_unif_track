@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         return new Promise(resolve =>{
             canvas.toBlob(blob => {
                 resolve(blob);
-            },'image/jpeg', 0.6);
+            },'image/jpeg', 0.5);
         });
         
     }
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
         // const reader = new FileReader();
-
+        
         // reader.onload = ()=>{
             upic_img_val.src = URL.createObjectURL(compImg);
             upic_box.style.display = 'block';

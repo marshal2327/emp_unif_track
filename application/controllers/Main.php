@@ -49,7 +49,7 @@ class Main extends CI_Controller{
 
     }
 
-
+    
     public function unif_entry(){
 
         date_default_timezone_set('Asia/Kolkata');
@@ -76,7 +76,7 @@ class Main extends CI_Controller{
                 // $type = substr($_FILES['uimg']['type'],6);
 
                 // SET PUBLIC URL, BCZ FTP WORKS ON LOCALY(10.0.1.184) NET SO
-                $target_url = "erp.crgarments.com:8082/empunif/assets/api/empunif_upload.php";
+                // $target_url = "erp.crgarments.com:8082/empunif/assets/api/empunif_upload.php";
                 // echo '<pre>'; print_r($target_url);exit;
 
                 $url = "./assets/images/entries/";
