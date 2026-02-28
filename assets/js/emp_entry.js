@@ -19,6 +19,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
     // UTILS
+
+    async function compressImg(file) {
+        const img = await createImageBitmap(file);
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const maxWidth = 800;
+        // const scale = maxWidth / img.width;
+
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        ctx.drawImage(img, 0,0, canvas.width, canvas.height);
+
+        return new Promise(resolve =>{
+            canvas.toBlob(blob => {
+                resolve(blob);
+            },'image/jpeg', 0.6);
+        });
+        
+    }
+
+
     // CLOSE OPTION BOX WHEN CLICK CLOSE BUTTON
     function closebyx(){   
 
@@ -117,7 +140,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let upic_box = document.getElementById('upic_box');
     let upic_img_val = document.getElementById('upic_img_val');
     
-    upic_img_inp.addEventListener('change', (d)=>{
+    upic_img_inp.addEventListener('change',async (d)=>{
 
         upic_img_val.src='';
         upic_box.style.display='none';
@@ -129,17 +152,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
             return;
         }
 
-        const reader = new FileReader();
+        let blob = await compressImg(img);
+        let compImg = new File([blob], "cap.jpeg", {type: "image/jpeg"});
+        console.log(compImg);
 
-        reader.onload = ()=>{
-            upic_img_val.src = reader.result;
+
+        // const reader = new FileReader();
+
+        // reader.onload = ()=>{
+            upic_img_val.src = URL.createObjectURL(compImg);
             upic_box.style.display = 'block';
-            form_datas.set('uimg', d.target.files[0]);
-            // console.log(Object.fromEntries(form_datas.entries()))
+            form_datas.set('uimg', compImg);
+        //     // console.log(Object.fromEntries(form_datas.entries()))
             pic_btn.textContent = 'Captured';   
-        }
+        // }
 
-        reader.readAsDataURL(img);
+        // reader.readAsDataURL(img);
 
     });
 
@@ -275,11 +303,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 }, 100);
                
             
-                setInterval(() => {
+                setTimeout(() => {
                     overlay.style.opacity=0;
                 }, 1900);
             
-                setInterval(() => {
+                setTimeout(() => {
                     window.location.reload();
                 }, 2000);
 
