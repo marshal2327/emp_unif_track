@@ -82,7 +82,7 @@ class Main extends CI_Controller{
                 
                 $type = substr($_FILES['uimg']['type'],6);
 
-                $target_url = "http://erp.crgarments.com:8082/empunif_upload.php";
+                $target_url = base_url()."assets/api/empunif_upload.php";
 
                 // CURL PROCESS
                 $ch = curl_init();

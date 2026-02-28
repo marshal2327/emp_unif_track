@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     save_entry_btn.addEventListener('click', async ()=>{
 
         overlay.style.display='flex';
-        lottie.src=base_url+'assets/gif/loading.json';
+        // lottie.src=base_url+'assets/gif/loading.json';
         setTimeout(() => {
             lottie.play();
             overlay.style.opacity=1;

@@ -27,7 +27,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
     <div id="overlay">
         <lottie-player
         id='lottie'
-        src="<?php echo base_url()?>assets/gif/Success.json"
+        src="<?php echo base_url()?>assets/gif/loading.json"
         background='transparent'
         speed='1'
         style='width:200px; height:200px;'
