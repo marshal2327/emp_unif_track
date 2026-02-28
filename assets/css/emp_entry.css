@@ -19,7 +19,7 @@
     transition: opacity 0.2s ease;
 }
 
-#overlay p{
+#overlay p{     
     opacity: 0;
     animation: show 1.5s ease-in forwards;
 }

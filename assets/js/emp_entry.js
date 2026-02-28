@@ -220,6 +220,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let save_entry_btn = document.getElementById('save_entry_btn');
     let overlay = document.getElementById('overlay');
     let lottie = document.getElementById('lottie');
+    let save_label = document.getElementById('save_label');
 
     save_entry_btn.addEventListener('click', async ()=>{
 
@@ -267,7 +268,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 //     lottie.play();
                 //     overlay.style.opacity=1;
                 // }, 100);
-                lottie.src=base_url+'assets/gif/Success.json';
+                lottie.load(base_url+'assets/gif/Success.json');
+                lottie.play();
+                save_label.textContent='Saved';
             
                 setInterval(() => {
                     overlay.style.opacity=0;

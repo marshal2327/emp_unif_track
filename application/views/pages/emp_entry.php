@@ -31,10 +31,10 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
         background='transparent'
         speed='1'
         style='width:200px; height:200px;'
-        loop='False';
-        >
+        loop='False'
+        >   
         </lottie-player>
-        <p class='p text-center text-white fw-bold fs-3' style='font-family:Poppins,sans-serif;'>Saved</p>
+        <p id='save_label' class='p text-center text-white fw-bold fs-3' style='font-family:Poppins,sans-serif;'>Saving</p>
 
     </div>
 
