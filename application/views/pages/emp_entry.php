@@ -68,7 +68,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                 <div class="px-2 py-1 w-100" id="emp_selectbox">
                     <div id="input_box">
                         <img width='23' height='23' src="<?php echo base_url()?>assets/Images/downarrow.png" alt="down">
-                        <input class='w-100' type="text" id='emp_sel' placeholder="e.g. MCEMPID / NAME" autocomplete='off'>
+                        <input class='w-100' type="text" id='emp_sel' placeholder="e.g. MCEMPID or NAME" autocomplete='off'>
                     </div>
 
                     <div class="mt-1 rounded-1 emp_options shadow-sm" id='emp_options'>

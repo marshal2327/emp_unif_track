@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 }, 1900);
             
                 setTimeout(() => {
-                    // window.location.reload();
+                    window.location.reload();
                 }, 2000);
 
                 
