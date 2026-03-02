@@ -189,7 +189,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                                 <div class="card">
                                     <div class="card-body p-0 px-3 pt-3 d-flex flex-column justify-content-center">
-                                        <div style="width:2000px; height:400px;" class='bg-dark w-100 rounded-3 shadow-sm' id="camera_dis">
+                                        <div style="width:200px; height:400px;" class='bg-dark w-100 rounded-3 shadow-sm' id="camera_dis">
                 
                                         </div>
                                         <!-- <img style='width:200px; height:200px;' id='cap_res' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt=""> -->
