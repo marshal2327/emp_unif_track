@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         Webcam.set({
             width:200,
-            height:250,
+            height:300,
             image_format:'jpeg',
             jpeg_quality:90
         });
