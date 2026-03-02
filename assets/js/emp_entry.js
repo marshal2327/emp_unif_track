@@ -159,7 +159,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
             width:200,
             height:300,
             image_format:'jpeg',
-            jpeg_quality:90
+            jpeg_quality:90,
+            constraints:{
+                // user -> FOR FRONT CAM
+                facingMode:'environment'
+            }
         });
 
         Webcam.attach('#camera_dis');
