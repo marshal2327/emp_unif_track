@@ -147,7 +147,7 @@
 
 .emp_box{
     display: grid;
-    grid-template-columns: 30% 5% 65%;
+    grid-template-columns: 35% 5% 60%;
     /* border: 1px solid black; */
     justify-items: center;
 }
@@ -205,7 +205,7 @@
 }
 
 #emp_card{
-    opacity: 0;
+    opacity: 0; 
     transition: 0.2s;
 }
 

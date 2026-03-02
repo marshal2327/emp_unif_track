@@ -91,14 +91,14 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                     <div class="card-title d-flex justify-content-evenly pt-3">
 
                         <div style='width:100px; height:120px;' class="card rounded-3 shadow">
-                            <img id='emp_img' class="card-img-top rounded-top-3" style='width:100%; min-height:95px;' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
+                            <img id='emp_img' class="card-img-top rounded-top-3 " style='width:100%; min-height:95px; border-bottom:1px solid grey;' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
                             <div class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
                                 <p class="card-text text-center" style='font-family:Poppins,sans-serif; font-size:12px;'>Profile Img</p>
                             </div>
                         </div>
 
-                        <div id='cap_img_box' style='width:100px; height:120px; display:content; opacity:0.6;' class="card rounded-3 shadow">
-                            <img id='cap_img' class="card-img-top rounded-top-3" style='width:100%; min-height:95px;' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
+                        <div id='cap_img_box' style='width:100px; height:120px; display:none;' class="card rounded-3 shadow">
+                            <img id='cap_img' class="card-img-top rounded-top-3" style='width:100%; min-height:95px;  border-bottom:1px solid grey;' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
                             <div class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
                                 <p class="card-text text-center" style='font-family:Poppins,sans-serif; font-size:12px;'>Captured Img</p>
                             </div>

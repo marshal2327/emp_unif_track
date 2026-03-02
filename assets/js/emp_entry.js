@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             if(!img){
                 pic_btn.textContent = 'Take Photo';
                 cap_img.src=base_url+'assets/images/nouserimg.jpg';
-                cap_img_box.style.opacity='0.6';
+                cap_img_box.style.display='none';
                 img = '';
                 form_datas.set('uimg', null);
                 // cap_img_box.style.display='none';
@@ -172,7 +172,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             reader.onload = ()=>{
                 cap_img.src = URL.createObjectURL(compImg);
-                cap_img_box.style.opacity='1';
                 cap_img_box.style.display="flex";
                 form_datas.set('uimg', compImg);
                 console.log(Object.fromEntries(form_datas.entries()))
