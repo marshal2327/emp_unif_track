@@ -141,13 +141,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     pic_btn.onclick = (d)=>{
 
+        d.preventDefault();
         console.log(cap_img_box);
 
-        d.preventDefault();
         upic_img_inp.click();
 
         upic_img_inp.addEventListener('change',async (d)=>{
-
+            
+            d.preventDefault();
             // cap_img.src=base_url+'assets/images/nouserimg.jpg';
             upic_img_inp.src='';
 
