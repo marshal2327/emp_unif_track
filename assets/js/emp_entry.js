@@ -139,52 +139,105 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let pic_btn = document.getElementById('pic_btn');
     let cap_img_box = document.getElementById('cap_img_box');
 
-    pic_btn.onclick = (d)=>{
 
-        d.preventDefault();
-        console.log(cap_img_box);
+    // WEBCAM PROCESS
 
-        upic_img_inp.click();
+    let camera_box = document.getElementById('camera_dis');
+    // let cap_res = document.getElementById('cap_res');
+    let capture = document.getElementById('capture');
 
-        upic_img_inp.addEventListener('change',async (d)=>{
-            
-            d.preventDefault();
-            // cap_img.src=base_url+'assets/images/nouserimg.jpg';
-            upic_img_inp.src='';
+    pic_btn.onclick = ()=>{
 
-            let img = d.target.files[0];
-
-            if(!img){
-                pic_btn.textContent = 'Take Photo';
-                cap_img.src=base_url+'assets/images/nouserimg.jpg';
-                cap_img_box.style.display='none';
-                img = '';
-                form_datas.set('uimg', null);
-                // cap_img_box.style.display='none';
-                return;
-            }
-
-            let blob = await compressImg(img);
-            let compImg = new File([blob], "cap.jpeg", {type: "image/jpeg"});
-            console.log(compImg);
+        cap_img.src= base_url+'assets/images/nouserimg.jpg';
+        cap_img_box.style.display='none';
+        capture.textContent='Capture';
+        pic_btn.textContent='Take Photo';
+        form_datas.set('uimg', null);
 
 
-            const reader = new FileReader();
-
-            reader.onload = ()=>{
-                cap_img.src = URL.createObjectURL(compImg);
-                cap_img_box.style.display="flex";
-                form_datas.set('uimg', compImg);
-                console.log(Object.fromEntries(form_datas.entries()))
-                pic_btn.textContent = 'Captured';  
-                URL.revokeObjectURL(compImg); 
-            }
-
-            reader.readAsDataURL(img);
-
+        Webcam.set({
+            width:200,
+            height:250,
+            image_format:'jpeg',
+            jpeg_quality:90
         });
-        
+
+        Webcam.attach('#camera_dis');
+
+        capture.onclick = function(){
+            Webcam.snap(function(data_uri){
+                Webcam.reset();
+                // console.log(data_uri);
+                cap_img.src=data_uri;
+                cap_img_box.style.display='flex';
+                capture.textContent='Captured';
+                pic_btn.textContent='Captured'
+
+                // CONVERT BS4 STR TO BLOB
+                fetch(data_uri)
+                .then(res => res.blob())
+                .then(blob => {
+                    let imgFile = new File([blob], "cap.jpeg", {type:blob.type});
+                    form_datas.set('uimg', imgFile);
+                    console.log(imgFile);
+                })
+
+                // CLOSE MODAL
+                let modalElement = document.getElementById('takePic');
+                let modalInstance = bootstrap.Modal.getInstance(modalElement);
+                modalInstance.hide();
+            })
+        }
     }
+
+
+    // pic_btn.onclick = (d)=>{
+
+    //     d.preventDefault();
+    //     console.log(cap_img_box);
+
+    //     upic_img_inp.click();
+
+    //     upic_img_inp.addEventListener('change',async (d)=>{
+            
+    //         d.preventDefault();
+    //         // cap_img.src=base_url+'assets/images/nouserimg.jpg';
+    //         upic_img_inp.src='';
+
+    //         let img = d.target.files[0];
+    //         console.log();
+
+    //         if(!img){
+    //             pic_btn.textContent = 'Take Photo';
+    //             cap_img.src=base_url+'assets/images/nouserimg.jpg';
+    //             cap_img_box.style.display='none';
+    //             img = '';
+    //             form_datas.set('uimg', null);
+    //             // cap_img_box.style.display='none';
+    //             return;
+    //         }
+
+    //         let blob = await compressImg(img);
+    //         let compImg = new File([blob], "cap.jpeg", {type: "image/jpeg"});
+    //         console.log(compImg);
+
+
+    //         const reader = new FileReader();
+
+    //         reader.onload = ()=>{
+    //             cap_img.src = URL.createObjectURL(compImg);
+    //             cap_img_box.style.display="flex";
+    //             form_datas.set('uimg', compImg);
+    //             console.log(Object.fromEntries(form_datas.entries()))
+    //             pic_btn.textContent = 'Captured';  
+    //             URL.revokeObjectURL(compImg); 
+    //         }
+
+    //         reader.readAsDataURL(img);
+
+    //     });
+        
+    // }
 
 
     // let upic_img_inp = document.getElementById('upic_img_inp');

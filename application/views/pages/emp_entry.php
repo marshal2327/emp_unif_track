@@ -17,7 +17,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Headline:wght@200..700&family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap"
         rel="stylesheet">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <!-- <?php echo '<pre>'; print_r($emp_datas);?> -->
@@ -25,16 +25,11 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 <body class='bg-light'>
 
     <div id="overlay">
-        <lottie-player
-        id='lottie'
-        src="<?php echo base_url()?>assets/gif/loading.json"
-        background='transparent'
-        speed='1'
-        style='width:200px; height:200px;'
-        loop='False'
-        >   
+        <lottie-player id='lottie' src="<?php echo base_url()?>assets/gif/loading.json" background='transparent'
+            speed='1' style='width:200px; height:200px;' loop='False'>
         </lottie-player>
-        <p id='save_label' class='p text-center text-white fw-bold fs-3' style='font-family:Poppins,sans-serif;'>Saving</p>
+        <p id='save_label' class='p text-center text-white fw-bold fs-3' style='font-family:Poppins,sans-serif;'>Saving
+        </p>
 
     </div>
 
@@ -68,7 +63,8 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                 <div class="px-2 py-1 w-100" id="emp_selectbox">
                     <div id="input_box">
                         <img width='23' height='23' src="<?php echo base_url()?>assets/Images/downarrow.png" alt="down">
-                        <input class='w-100' type="text" id='emp_sel' placeholder="e.g. MCEMPID or NAME" autocomplete='off'>
+                        <input class='w-100' type="text" id='emp_sel' placeholder="e.g. MCEMPID or NAME"
+                            autocomplete='off'>
                     </div>
 
                     <div class="mt-1 rounded-1 emp_options shadow-sm" id='emp_options'>
@@ -91,16 +87,25 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                     <div class="card-title d-flex justify-content-evenly pt-3">
 
                         <div style='width:100px; height:120px;' class="card rounded-3 shadow">
-                            <img id='emp_img' class="card-img-top rounded-top-3 " style='width:100%; min-height:95px; border-bottom:1px solid grey;' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
-                            <div class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
-                                <p class="card-text text-center" style='font-family:Poppins,sans-serif; font-size:12px;'>Profile Img</p>
+                            <img id='emp_img' class="card-img-top rounded-top-3 "
+                                style='width:100%; min-height:95px; border-bottom:1px solid grey;'
+                                src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
+                            <div
+                                class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
+                                <p class="card-text text-center"
+                                    style='font-family:Poppins,sans-serif; font-size:12px;'>Profile Img</p>
                             </div>
                         </div>
 
-                        <div id='cap_img_box' style='width:100px; height:120px; display:none;' class="card rounded-3 shadow">
-                            <img id='cap_img' class="card-img-top rounded-top-3" style='width:100%; min-height:95px;  border-bottom:1px solid grey;' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
-                            <div class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
-                                <p class="card-text text-center" style='font-family:Poppins,sans-serif; font-size:12px;'>Captured Img</p>
+                        <div id='cap_img_box' style='width:100px; height:120px; display:none;'
+                            class="card rounded-3 shadow">
+                            <img id='cap_img' class="card-img-top rounded-top-3"
+                                style='width:100%; min-height:95px;  border-bottom:1px solid grey;'
+                                src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
+                            <div
+                                class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
+                                <p class="card-text text-center"
+                                    style='font-family:Poppins,sans-serif; font-size:12px;'>Captured Img</p>
                             </div>
                         </div>
 
@@ -149,15 +154,19 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         <div id='remarks_box' class="mt-3">
                             <p class="col-12 p m-0 p-0" style='font-family:Poppins,sans-serif; font-size:13px;'>Remarks*
                             </p>
-                            <textarea disabled rows="3" class='w-100 rounded-2 mt-2 p-1 disable' name="" id="remarks_val" required></textarea>
+                            <textarea disabled rows="3" class='w-100 rounded-2 mt-2 p-1 disable' name=""
+                                id="remarks_val" required></textarea>
                         </div>
 
                         <div id='capture_box' class="row m-0 mt-1 d-flex justify-content-between">
 
-                            <button type="button" disabled id='pic_btn' class=" disable btn btn-outline-none bg-primary shadow-sm text-white fw-bold "
-                                style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Take Photo</button>
-                                <input class="" type="file" id='upic_img_inp' name='upic_img' accept="image/*" capture>
-                            <button type="button" disabled id='save_entry_btn' class="disable btn btn-outline-none bg-success shadow-sm text-white fw-bold "
+                            <button type="button" id='pic_btn'
+                                class=" disable btn btn-outline-none bg-primary shadow-sm text-white fw-bold "
+                                style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'
+                                data-bs-toggle="modal" data-bs-target="#takePic">Take Photo</button>
+                            <!-- <input class="d-none" type="file" id='upic_img_inp' name='upic_img' accept="image/*" capture> -->
+                            <button type="button" disabled id='save_entry_btn'
+                                class="disable btn btn-outline-none bg-success shadow-sm text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Submit</button>
 
                         </div>
@@ -166,16 +175,49 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                 </div>
 
+                <!-- FOR TAKE PICTURE BOX -->
+
+                <div class="modal fade mt-5 px-2" id="takePic">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title h3 fs-5 w-100 text-center ms-1">Take Picture</h3>
+                                <button class="btn-close fs-5" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <div class="modal-body" style='box-sizing:border-box;'>
+
+                                <div class="card">
+                                    <div class="card-body p-0 d-flex flex-column justify-content-center">
+                                        <div style="width:200px; height:350px;" class='bg-dark w-100 rounded-3 shadow-sm' id="camera_dis"></div>
+                                        <!-- <img style='width:200px; height:200px;' id='cap_res' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt=""> -->
+                                        <button id='capture'
+                                            style='font-family:Poppins,sans-serif; font-size:14px; font-weight:450;'
+                                            type="button"
+                                            class="btn btn-outline-none align-self-center bg-primary text-white rounded-3 shadow-sm my-2 py-1 px-3">Capture</button>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
         </div>
 
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
-    
+
     <script>
     let base_url = "<?php echo base_url()?>";
     let emp_datas = <?php echo json_encode($emp_datas)?>;
