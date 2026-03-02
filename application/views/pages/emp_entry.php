@@ -188,13 +188,15 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             <div class="modal-body" style='box-sizing:border-box;'>
 
                                 <div class="card">
-                                    <div class="card-body p-0 d-flex flex-column justify-content-center">
-                                        <div style="width:150; height:400px;" class='bg-dark w-100 rounded-3 shadow-sm' id="camera_dis"></div>
+                                    <div class="card-body p-0 px-3 pt-2 d-flex flex-column justify-content-center">
+                                        <div style="width:150px; height:400px;" class='bg-dark w-100 rounded-3 shadow-sm' id="camera_dis">
+                
+                                        </div>
                                         <!-- <img style='width:200px; height:200px;' id='cap_res' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt=""> -->
                                         <button id='capture'
                                             style='font-family:Poppins,sans-serif; font-size:14px; font-weight:450;'
                                             type="button"
-                                            class="btn btn-outline-none align-self-center bg-primary text-white rounded-3 shadow-sm my-2 py-1 px-3">Capture</button>
+                                            class="btn btn-outline-none align-self-center bg-primary text-white rounded-3 shadow-sm my-2 py-2 px-3">Capture</button>
                                     </div>
 
                                 </div>

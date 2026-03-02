@@ -200,12 +200,12 @@
 }
 
 #entry_card{
-    opacity: 0; 
+    opacity: 1; 
     transition: all 0.2s ease;
 }
 
 #emp_card{
-    opacity: 0; 
+    opacity: 1; 
     transition: 0.2s;
 }
 
@@ -216,11 +216,18 @@
 }
 
 /* FOR WEB CAMERA */
+
+#camera_dis{
+    position: relative;
+}
+
 #camera_dis video{
     width: 100% !important;
     height: 100% !important;
     object-fit: fill;
+    border-radius: 15px;
 }
+
 
 
 
