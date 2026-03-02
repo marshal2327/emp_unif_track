@@ -154,10 +154,10 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                         <div id='capture_box' class="row m-0 mt-1 d-flex justify-content-between">
 
-                            <button disabled id='pic_btn' class=" disable btn btn-outline-none bg-primary shadow-sm text-white fw-bold "
+                            <button type="button" disabled id='pic_btn' class=" disable btn btn-outline-none bg-primary shadow-sm text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Take Photo</button>
                                 <input class="d-none" type="file" id='upic_img_inp' name='upic_img' accept="image/*" capture="environment">
-                            <button disabled id='save_entry_btn' class="disable btn btn-outline-none bg-success shadow-sm text-white fw-bold "
+                            <button type="button" disabled id='save_entry_btn' class="disable btn btn-outline-none bg-success shadow-sm text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Submit</button>
 
                         </div>
