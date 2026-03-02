@@ -156,7 +156,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                             <button type="button" disabled id='pic_btn' class=" disable btn btn-outline-none bg-primary shadow-sm text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Take Photo</button>
-                                <input class="d-none" type="file" id='upic_img_inp' name='upic_img' accept="image/*" capture>
+                                <input class="" type="file" id='upic_img_inp' name='upic_img' accept="image/*" capture>
                             <button type="button" disabled id='save_entry_btn' class="disable btn btn-outline-none bg-success shadow-sm text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Submit</button>
 
@@ -165,50 +165,6 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                     </div>
 
                 </div>
-
-                <!-- FOR TAKE PICTURE BOX -->
-
-                <!-- <div class="modal fade mt-5 px-2" id="takePic">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title h3 fs-5 w-100 text-center ms-1">Take Picture</h3>
-                                <button class="btn-close fs-5" data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <div class="modal-body" style='box-sizing:border-box;'>
-
-                                <div class="card">
-
-                                    <div class="card-titile">
-                                        <form onsubmit="return false;">    
-                                            <input class='form-control' type="file" id='upic_img_inp' name='upic_img'
-                                            accept="image/*" capture="environment">
-                                        </form>
-                                    </div>
-
-                                    <div id='upic_box' class="card-body pb-2">
-                                        <img id='upic_img_val' class='rounded-3 shadow-sm'
-                                            style='width:100%; height:100%;' src="" alt="">
-
-                                        <div  class="btn_box w-100 d-flex justify-content-center pt-2">
-                                            <button data-bs-dismiss="modal" class="btn w-25 1 rounded-3 shadow-sm text-center"
-                                                style='background:#3fe397;'>Ok</button>
-                                        </div>
-
-                                    </div>
-
-
-
-                                </div>
-
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div> -->
-
 
             </div>
 
