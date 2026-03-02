@@ -156,7 +156,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                             <button type="button" disabled id='pic_btn' class=" disable btn btn-outline-none bg-primary shadow-sm text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Take Photo</button>
-                                <input class="d-none" type="file" id='upic_img_inp' name='upic_img' accept="image/*" >
+                                <input class="d-none" type="file" id='upic_img_inp' name='upic_img' accept="image/*" capture>
                             <button type="button" disabled id='save_entry_btn' class="disable btn btn-outline-none bg-success shadow-sm text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Submit</button>
 
