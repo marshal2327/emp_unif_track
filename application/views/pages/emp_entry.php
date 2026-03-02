@@ -84,15 +84,29 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                 </div>
 
-                <div id='emp_card' class="card shadow border-1 mx-2 mt-2 rounded-3">
+                <div id='emp_card' class="card shadow border-1 mx-2 mt-2 rounded">
                     <!-- <div class="card-title"> -->
                     <!-- <h5 class='h5 fs-6'>Employee Details</h5> -->
                     <!-- </div> -->
-                    <div class="card-title d-flex justify-content-center pt-3">
-                        <img id='emp_img' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
+                    <div class="card-title d-flex justify-content-evenly pt-3">
+
+                        <div style='width:100px; height:120px;' class="card rounded-3 shadow">
+                            <img id='emp_img' class="card-img-top rounded-top-3" style='width:100%; min-height:95px;' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
+                            <div class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
+                                <p class="card-text text-center" style='font-family:Poppins,sans-serif; font-size:12px;'>Profile Img</p>
+                            </div>
+                        </div>
+
+                        <div id='cap_img_box' style='width:100px; height:120px; display:none;' class="card rounded-3 shadow">
+                            <img id='cap_img' class="card-img-top rounded-top-3" style='width:100%; min-height:95px;' src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
+                            <div class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
+                                <p class="card-text text-center" style='font-family:Poppins,sans-serif; font-size:12px;'>Captured Img</p>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div id='emp_info_box' class="card-body px-3 ps-4 pt-1 d-flex flex-column gap-2">
+                    <div id='emp_info_box' class="card-body px-3 pt-3 d-flex flex-column gap-2">
 
                         <div id='name_box' class="emp_box">
                             <label for="">Name</label>
@@ -113,6 +127,11 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             <label for="">Designation</label>
                             <span>:</span>
                             <p id='design_val' style='margin:0; padding:0px 5px;'>-</p>
+                        </div>
+                        <div id='div_box' class="emp_box">
+                            <label for="">Division</label>
+                            <span>:</span>
+                            <p id='div_val' style='margin:0; padding:0px 5px;'>-</p>
                         </div>
                     </div>
                 </div>
@@ -136,8 +155,8 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         <div id='capture_box' class="row m-0 mt-1 d-flex justify-content-between">
 
                             <button disabled id='pic_btn' class=" disable btn btn-outline-none bg-primary shadow-sm text-white fw-bold "
-                                data-bs-toggle="modal" data-bs-target="#takePic"
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Take Photo</button>
+                                <input class="d-none" type="file" id='upic_img_inp' name='upic_img' accept="image/*" capture="environment">
                             <button disabled id='save_entry_btn' class="disable btn btn-outline-none bg-success shadow-sm text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'>Submit</button>
 
@@ -149,7 +168,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                 <!-- FOR TAKE PICTURE BOX -->
 
-                <div class="modal fade mt-5 px-2" id="takePic">
+                <!-- <div class="modal fade mt-5 px-2" id="takePic">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -158,7 +177,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             </div>
 
                             <div class="modal-body" style='box-sizing:border-box;'>
-                                <!-- FOR FRONT CAMERA : CAPTURE = USER -->
+
                                 <div class="card">
 
                                     <div class="card-titile">
@@ -188,7 +207,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
             </div>

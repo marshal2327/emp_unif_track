@@ -30,9 +30,10 @@ class Main extends CI_Controller{
         if(!empty($_GET)){
         
             $recid = $_GET['recid'];
+            $docid = $_GET['docid'];
             $mcempid = $_GET['mcempid'];
             
-            $params = array('recid' => $recid, 'mcempid' => $mcempid);
+            $params = array('recid' => $recid, 'docid' => $docid, 'mcempid' => $mcempid);
             
             $result = $this->User_model->emp_info($params);
 
@@ -48,7 +49,6 @@ class Main extends CI_Controller{
            
      
             }else{
-                echo "<pre>"; print_r('IMG GET FAILED');
                 echo json_encode(array('status' => FALSE, 'message' => 'Img Get Failed'));
             }
             
@@ -76,7 +76,6 @@ class Main extends CI_Controller{
 
             // INSERT DATA TO DB
             $db_res = $this->User_model->sve_ufentry($cred);
-
         
             if(!empty($_FILES['uimg'])){
                 

@@ -41,8 +41,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         });
         
     }
-
-
+    
     // CLOSE OPTION BOX WHEN CLICK CLOSE BUTTON
     function closebyx(){   
 
@@ -52,9 +51,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         emp_card.style.opacity=0;
         entry_card.style.opacity=0;
         pic_btn.textContent='Take Photo';
-        upic_img_val.src='';
-        upic_img_inp.value='';
-        upic_box.style.display='none';
+        cap_img.src='';
         prebpy_val.value='';
         remarks_val.value='';
 
@@ -79,7 +76,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let emp_sel = document.getElementById('emp_sel');
     let emp_option = document.getElementById('emp_options');
     let input_img = document.querySelector('#input_box img');
-    let pic_btn = document.getElementById('pic_btn');
+    // let pic_btn = document.getElementById('pic_btn');
     let disables = document.querySelectorAll('.disable'); 
 
     let timeout;
@@ -138,40 +135,89 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     // FOR SHOW THE CAPTURED IMG
     let upic_img_inp = document.getElementById('upic_img_inp');
-    let upic_box = document.getElementById('upic_box');
-    let upic_img_val = document.getElementById('upic_img_val');
-    
-    upic_img_inp.addEventListener('change',async (d)=>{
+    let cap_img = document.getElementById('cap_img');
+    let pic_btn = document.getElementById('pic_btn');
+    let cap_img_box = document.getElementById('cap_img_box');
 
-        upic_img_val.src='';
-        upic_box.style.display='none';
+    pic_btn.onclick = (d)=>{
 
-        const img = d.target.files[0];
+        console.log(cap_img_box);
 
-        if(!img){
-            pic_btn.textContent = 'Take Photo';
-            return;
-        }
+        d.preventDefault();
+        upic_img_inp.click();
 
-        let blob = await compressImg(img);
-        let compImg = new File([blob], "cap.jpeg", {type: "image/jpeg"});
-        // console.log(compImg);
+        upic_img_inp.addEventListener('change',async (d)=>{
+
+            cap_img.src='';
+            upic_img_inp.src='';
+
+            const img = d.target.files[0];
+
+            if(!img){
+                pic_btn.textContent = 'Take Photo';
+                cap_img.src=base_url+'assets/images/nouserimg.jpg';
+                cap_img_box.style.display='none';
+                return;
+            }
+
+            let blob = await compressImg(img);
+            let compImg = new File([blob], "cap.jpeg", {type: "image/jpeg"});
+            console.log(compImg);
 
 
-        // const reader = new FileReader();
+            const reader = new FileReader();
+
+            reader.onload = ()=>{
+                cap_img.src = URL.createObjectURL(compImg);
+                cap_img_box.style.display="flex";
+                form_datas.set('uimg', compImg);
+                console.log(Object.fromEntries(form_datas.entries()))
+                pic_btn.textContent = 'Captured';  
+                URL.revokeObjectURL(compImg); 
+            }
+
+            reader.readAsDataURL(img);
+
+        });
         
-        // reader.onload = ()=>{
-            upic_img_val.src = URL.createObjectURL(compImg);
-            upic_box.style.display = 'block';
-            form_datas.set('uimg', compImg);
-        //     // console.log(Object.fromEntries(form_datas.entries()))
-            pic_btn.textContent = 'Captured';  
-            URL.revokeObjectURL(compImg); 
-        // }
+    }
 
-        // reader.readAsDataURL(img);
 
-    });
+    // let upic_img_inp = document.getElementById('upic_img_inp');
+    // let upic_box = document.getElementById('upic_box');
+    // let upic_img_val = document.getElementById('upic_img_val');
+    
+    // upic_img_inp.addEventListener('change',async (d)=>{
+
+    //     upic_img_val.src='';
+    //     upic_box.style.display='none';
+
+    //     const img = d.target.files[0];
+
+    //     if(!img){
+    //         pic_btn.textContent = 'Take Photo';
+    //         return;
+    //     }
+
+    //     let blob = await compressImg(img);
+    //     let compImg = new File([blob], "cap.jpeg", {type: "image/jpeg"});
+    //     // console.log(compImg);
+
+
+    //     // const reader = new FileReader();
+        
+    //     // reader.onload = ()=>{
+    //         upic_img_val.src = URL.createObjectURL(compImg);
+    //         upic_box.style.display = 'block';
+    //         form_datas.set('uimg', compImg);
+    //     //     // console.log(Object.fromEntries(form_datas.entries()))
+    //         pic_btn.textContent = 'Captured';  
+    //         URL.revokeObjectURL(compImg); 
+    //     // }
+
+    //     // reader.readAsDataURL(img);
+
+    // });
 
 
     
@@ -182,6 +228,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let mcempid_val = document.getElementById('mcempid_val');
     let dept_val = document.getElementById('dept_val');
     let design_val = document.getElementById('design_val');
+    let div_val = document.getElementById('div_val');
 
 
 
@@ -196,7 +243,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         emp_sel.value = res.MID;
 
         // GET USER DETAILS AND FILL ON UI
-        const result = await fetch(base_url+`Main/get_user_det?recid=${encodeURIComponent(res.CREMPSTMASTID)}&mcempid=${encodeURIComponent(res.MCEMPID)}`);
+        const result = await fetch(base_url+`Main/get_user_det?recid=${encodeURIComponent(res.CREMPSTMASTID)}&docid=${encodeURIComponent(res.DOCID)}&mcempid=${encodeURIComponent(res.MCEMPID)}`);
         const data = await result.json();
 
         // console.log(data);
@@ -213,14 +260,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
             mcempid_val.textContent = data['user_info'].MCEMPID ? data['user_info'].MCEMPID : '-';
             dept_val.textContent = data['user_info'].DEPT ? data['user_info'].DEPT : '-';
             design_val.textContent = data['user_info'].DESIGNATION ? data['user_info'].DESIGNATION : '-';
+            div_val.textContent = data['user_info'].DIVISION ? data['user_info'].DIVISION : '-';
+
 
             if(data['user_info']['CREMPSTMASTID']){
                 let user = data['user_info'];
                 
                 form_datas.set('recid', user.CREMPSTMASTID);
+                form_datas.set('docid', user.DOCID);
                 form_datas.set('empid', user.EMPID);
                 form_datas.set('mcempid', user.MCEMPID);
                 form_datas.set('dept', user.DEPT);
+                form_datas.set('division', user.DIV_MASTID);
                 form_datas.set('design', user.DESIGNATION);
                 form_datas.set('uimg', null);
                 
@@ -296,8 +347,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             const result = await resp.json();
             console.log(result);
-            
 
+        
             if(result['status']){
                 console.log('Save Success');
 
@@ -322,12 +373,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 
             }else{
                 alert('Save Failed : ', result['message']);
+                return;
             }
 
             }
             catch(err){
                 console.error('Post Failed', err);
                 alert('Error Occured :', err);
+                return;
             }
 
 

@@ -24,7 +24,7 @@ $from_path = $_FILES['uimg']['tmp_name'];
 $to_path = $directory.'\\'.$filename;
 
 if(move_uploaded_file($from_path, $to_path)){
-    echo json_encode(array('status' => 'ok', 'message' => 'Uploaded', 'file' => $filename));
+    echo json_encode(array('status' => TRUE, 'message' => 'Uploaded', 'file' => $filename));
 }else{
     echo json_encode(array('status' => 'error', 'message' => 'Upload Failed'));
 }

@@ -35,11 +35,6 @@
 
 
 
-
-
-
-
-
 #content_box{
     box-sizing: border-box;
     /* border: 1px solid black; */
@@ -136,22 +131,23 @@
 
 
 #emp_card .card-title{
-     box-sizing: border-box;
+     /* box-sizing: border-box; */
     /* border: 1px solid black; */
 }
 
 #emp_card .card-title img{
-    width: 100px;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    /* width: 100px;
     height: 110px;
     object-fit:cover;
-    scale: 1;
+    scale: 1    ;
     border-radius: 50%;
-    box-shadow: 0px 0px 8px grey;
+    box-shadow: 0px 0px 8px grey; */
 }
 
 .emp_box{
     display: grid;
-    grid-template-columns: 43% 5% 52%;
+    grid-template-columns: 30% 5% 65%;
     /* border: 1px solid black; */
     justify-items: center;
 }
