@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     console.log('EMP ENTYR PAGE PARSED' );
 
     console.log(base_url);
-    // console.log(emp_datas);
+    console.log(base_url+'assets/images/nouserimg.jpg');
 
     // GLOBAL VAR FOR SAVE ENTRY
     let form_datas = new FormData();
@@ -148,15 +148,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         upic_img_inp.addEventListener('change',async (d)=>{
 
-            cap_img.src='';
+            // cap_img.src=base_url+'assets/images/nouserimg.jpg';
             upic_img_inp.src='';
 
-            const img = d.target.files[0];
+            let img = d.target.files[0];
 
             if(!img){
                 pic_btn.textContent = 'Take Photo';
                 cap_img.src=base_url+'assets/images/nouserimg.jpg';
-                cap_img_box.style.display='none';
+                cap_img_box.style.opacity='0.6';
+                img = '';
+                form_datas.set('uimg', null);
+                // cap_img_box.style.display='none';
                 return;
             }
 
@@ -169,6 +172,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             reader.onload = ()=>{
                 cap_img.src = URL.createObjectURL(compImg);
+                cap_img_box.style.opacity='1';
                 cap_img_box.style.display="flex";
                 form_datas.set('uimg', compImg);
                 console.log(Object.fromEntries(form_datas.entries()))
