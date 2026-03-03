@@ -222,8 +222,8 @@
 }
 
 #camera_dis video{
-    width: 100% !important;
-    height: 100% !important;
+    width: 200px !important;
+    height: 350px !important;
     object-fit: fill;
     border-radius: 0.5rem !important;
 }
