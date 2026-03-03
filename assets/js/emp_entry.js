@@ -158,8 +158,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         Webcam.set({
             width:350,
             height:460,
-            image_format:'png',
-            png_quality:100,
+            image_format:'jpeg',
+            jpeg_quality:100,
             constraints:{
                 // user -> FOR FRONT CAM
                 facingMode:'environment'
