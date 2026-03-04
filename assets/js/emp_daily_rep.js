@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 orderable:false,
                 render:function(data, type, row){
                     if(type === 'display'){
-                        return `<img src='${data}' class='img-fluid shadow-sm rounded-2' style='width:80px; height:80px;'>`
+                        return `<img src='${data}' class='shadow-sm rounded-2' style='width:80px; height:80px;'>`
                     }
                     return data;
                 }
@@ -69,10 +69,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         ]
         
     });
-
-    
-
-
 
     // GET DATA PROCESS
     let from_dt = document.getElementById('from_dt');
@@ -146,7 +142,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
                 });
 
-                data_table.draw();
+                // data_table.draw();
                
                 // SHOW TABLE
                 table_result.style.display='block';

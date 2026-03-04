@@ -232,7 +232,7 @@
 /* FOR TABLE AND REPORT STYLES */
 
 .dataTables_wrapper{
-    max-height: 500px;
+    max-height: 450 px;
     overflow-y: scroll;
     box-sizing: border-box;  
     scroll-snap-type: y mandatory;
@@ -254,7 +254,7 @@
 .dataTable thead, .dataTables_filter{
     position: sticky;
     top: -1%;
-    left: 0;
+    left: 0;    
 }
 
 .dataTable thead tr>th{

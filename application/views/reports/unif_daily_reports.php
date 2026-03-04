@@ -55,11 +55,11 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         ENTRY</span>
 
                     <div class="dropdown">
-                        <button class="btn btn-outline-none bg-light fw-bold fs-6" data-bs-toggle="dropdown">⋮</button>
+                        <button class="btn btn-outline-none bg-light fw-bold my-0 py-0 fs-5" data-bs-toggle="dropdown">⋮</button>
 
                         <ul class="dropdown-menu dropdown-menu-end text-center p-0 m-0">
-                            <li><a href="<?= base_url()?>Main" class="dropdown-item py-1 m-0 border-bottom border-1" style="font-family:Poppins, sans-serif; font-size:13px;">Home</a></li>
-                            <li><a href="<?= base_url()?>Main/unif_daily_rep_page" class="dropdown-item py-1 m-0" style="font-family:Poppins, sans-serif; font-size:13px;">Reports</a></li>
+                            <li><a href="<?= base_url()?>Main" class="dropdown-item py-2 m-0 border-bottom border-1" style="font-family:Poppins, sans-serif; font-size:14px;">Home</a></li>
+                            <li><a href="<?= base_url()?>Main/unif_daily_rep_page" class="dropdown-item py-2 m-0" style="font-family:Poppins, sans-serif; font-size:14px;">Reports</a></li>
                         </ul>
 
                     </div>
@@ -79,7 +79,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                     <img width='25' height='25' src="<?= base_url()?>assets/images/previous.png" alt="">
                 </a>
                 
-                <div id='content_box' class="col-12 mt-3">
+                <div id='content_box' class="col-12 mt-4">
                     <h5 class="h5 fs-6 " style='font-family:Poppins,sans-serif;'>Uniform Entry Report</h5>
                 </div>
                 
@@ -110,26 +110,106 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- <tr>
+                                <tr>
                                     <td class="text-center align-middle">1</td>
                                     <td class="text-center align-middle">Marshal Augustine</td>
                                     <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
                                     <td class="text-center align-middle">ERP</td>
                                     <td class="text-center align-middle">Software Developer</td>
                                     <td class="text-center align-middle">C.R.Garments</td>
-                                    <td class="text-center align-middle">03/03/2026 09:5     9:14</td>
                                     <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
                                 </tr>
                                 <tr>
                                     <td class="text-center align-middle">1</td>
                                     <td class="text-center align-middle">Marshal Augustine</td>
                                     <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
                                     <td class="text-center align-middle">ERP</td>
                                     <td class="text-center align-middle">Software Developer</td>
                                     <td class="text-center align-middle">C.R.Garments</td>
-                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
                                     <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
-                                </tr> -->
+                                </tr>
+                                <tr>
+                                    <td class="text-center align-middle">1</td>
+                                    <td class="text-center align-middle">Marshal Augustine</td>
+                                    <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
+                                    <td class="text-center align-middle">ERP</td>
+                                    <td class="text-center align-middle">Software Developer</td>
+                                    <td class="text-center align-middle">C.R.Garments</td>
+                                    <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center align-middle">1</td>
+                                    <td class="text-center align-middle">Marshal Augustine</td>
+                                    <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
+                                    <td class="text-center align-middle">ERP</td>
+                                    <td class="text-center align-middle">Software Developer</td>
+                                    <td class="text-center align-middle">C.R.Garments</td>
+                                    <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center align-middle">1</td>
+                                    <td class="text-center align-middle">Marshal Augustine</td>
+                                    <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
+                                    <td class="text-center align-middle">ERP</td>
+                                    <td class="text-center align-middle">Software Developer</td>
+                                    <td class="text-center align-middle">C.R.Garments</td>
+                                    <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center align-middle">1</td>
+                                    <td class="text-center align-middle">Marshal Augustine</td>
+                                    <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
+                                    <td class="text-center align-middle">ERP</td>
+                                    <td class="text-center align-middle">Software Developer</td>
+                                    <td class="text-center align-middle">C.R.Garments</td>
+                                    <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center align-middle">1</td>
+                                    <td class="text-center align-middle">Marshal Augustine</td>
+                                    <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
+                                    <td class="text-center align-middle">ERP</td>
+                                    <td class="text-center align-middle">Software Developer</td>
+                                    <td class="text-center align-middle">C.R.Garments</td>
+                                    <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center align-middle">1</td>
+                                    <td class="text-center align-middle">Marshal Augustine</td>
+                                    <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
+                                    <td class="text-center align-middle">ERP</td>
+                                    <td class="text-center align-middle">Software Developer</td>
+                                    <td class="text-center align-middle">C.R.Garments</td>
+                                    <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center align-middle">1</td>
+                                    <td class="text-center align-middle">Marshal Augustine</td>
+                                    <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
+                                    <td class="text-center align-middle">ERP</td>
+                                    <td class="text-center align-middle">Software Developer</td>
+                                    <td class="text-center align-middle">C.R.Garments</td>
+                                    <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
+                                </tr><tr>
+                                    <td class="text-center align-middle">1</td>
+                                    <td class="text-center align-middle">Marshal Augustine</td>
+                                    <td class="text-center align-middle">HOS42245</td>
+                                    <td class="text-center align-middle">03/03/2026 09:59:14</td>
+                                    <td class="text-center align-middle">ERP</td>
+                                    <td class="text-center align-middle">Software Developer</td>
+                                    <td class="text-center align-middle">C.R.Garments</td>
+                                    <td class="text-center align-middle"><img class="img-fluid rounded-2 shadow-sm" src="<?= base_url()?>assets/images/person.jpg" alt=""></td>
+                                </tr>
+                                
                             </tbody>
 
                         </table>
