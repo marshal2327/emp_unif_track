@@ -59,7 +59,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 orderable:false,
                 render:function(data, type, row){
                     if(type === 'display'){
-                        return `<img src='http://10.0.1.184:8082/axpattach/CR/empunifhel/person.jpg' class='shadow-sm rounded-2' style='width:80px; height:80px;'>`
+                        return `<img 
+                        src="http://erp.crgarments.com:8082/axpattach/cr/empunifhel/person.jpg" 
+                        class="shadow-sm rounded-2"
+                        style="width:80px; height:80px; object-fit:cover;">`;
                     }
                     return data;
                 }
