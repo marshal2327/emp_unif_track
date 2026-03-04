@@ -137,6 +137,7 @@
 
 #emp_card .card-title img{
     border-bottom: 1px solid rgb(211, 211, 211);
+    object-fit: cover;
     /* width: 100px;
     height: 110px;
     object-fit:cover;
@@ -231,6 +232,11 @@
 /* -------------------------------------------------------------- */
 /* FOR TABLE AND REPORT STYLES */
 
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
 .dataTables_wrapper{
     max-height: 450px;
     overflow-y: scroll;
@@ -271,7 +277,7 @@
 
 .dataTable tbody tr>td{
     font-family: 'Poppins', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     border-right: 1px solid white;
     vertical-align: middle;
     text-align: center;
