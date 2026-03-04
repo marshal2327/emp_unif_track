@@ -180,21 +180,21 @@ public function unif_daily_rep(){
 
 public function get_user_img(){
 
+    // // $fname = $_GET['imgname'];
+
     // $fname = $_GET['imgname'];
+    // // $fname='HOS41931_04-03-2026_12-38-59.jpeg';
 
-    $fname = $_GET['imgname'];
-    // $fname='HOS41931_04-03-2026_12-38-59.jpeg';
+    // $url = "http://erp.crgarments.com:8082/axpattach/cr/empunifhel/";
 
-    $url = "http://erp.crgarments.com:8082/axpattach/cr/empunifhel/";
+    // $blob = @file_get_contents($url.$fname);
 
-    $blob = @file_get_contents($url.$fname);
-
-    if($blob){
-        header("Content-Type: image/jpeg");
-        echo $blob;
-    } else {
-        header("HTTP/1.0 404 Not Found");
-    }
+    // if($blob){
+    //     header("Content-Type: image/jpeg");
+    //     echo $blob;
+    // } else {
+    //     header("HTTP/1.0 404 Not Found");
+    // }
     
 }
 

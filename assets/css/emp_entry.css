@@ -259,7 +259,7 @@
 
 .dataTable thead tr>th{
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 450;
     vertical-align: middle;
     text-align: center;
@@ -271,7 +271,7 @@
 
 .dataTable tbody tr>td{
     font-family: 'Poppins', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     border-right: 1px solid white;
     vertical-align: middle;
     text-align: center;
@@ -286,6 +286,7 @@
 .table{
     --bs-table-bg: transparent !important;
 }
+
 
 /* FOR TRANSITION */
 
