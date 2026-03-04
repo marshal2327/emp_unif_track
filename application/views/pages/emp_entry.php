@@ -38,7 +38,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
         <div class="row">
 
             <!-- NAVIGATION -->
-            <div class="col-12 p-0 fixed-top">
+            <div class="col-12 p-0">
 
                 <nav id='navbar' class="navbar navbar-light bg-light shadow-sm p-2">
                     
@@ -68,7 +68,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
         <!-- CONTENTS -->
         <div class="row">
 
-            <div id='content_box' class="col-12 px-2 pt-5 mt-4">
+            <div id='content_box' class="col-12 px-2 mt-4">
 
                 <h5 class="h5 fs-6 px-1">Select Employee</h5>
 
@@ -105,7 +105,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
                                 <p class="card-text text-center"
-                                    style='font-family:Poppins,sans-serif; font-size:13px; color:grey; '>Profile Img</p>
+                                    style='font-family:Poppins,sans-serif; font-size:12px; color:grey;'>Profile Img</p>
                             </div>
                         </div>
 
@@ -117,7 +117,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
                                 <p class="card-text text-center"
-                                    style='font-family:Poppins,sans-serif; font-size:13px; color:grey;'>Captured Img</p>
+                                    style='font-family:Poppins,sans-serif; font-size:12px; color:grey;'>Captured Img</p>
                             </div>
                         </div>
 

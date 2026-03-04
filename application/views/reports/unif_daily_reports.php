@@ -73,7 +73,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
         <!-- CONTENTS -->
         <div class="row">
 
-            <div class="col-12 mt-3 fixed-top pt-5 mt-4">
+            <div class="col-12 mt-3">
                 
                 <a href="<?= base_url()?>" class="">
                     <img width='25' height='25' src="<?= base_url()?>assets/images/previous.png" alt="">
