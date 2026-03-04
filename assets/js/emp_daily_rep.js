@@ -54,17 +54,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             },
 
-            // {
-            //     targets:7,
-            //     orderable:false,
-            //     render:function(data, type, row){
-            //         if(type === 'display'){
-            //             return `<img src='${data}' class='shadow-sm rounded-2' style='width:80px; height:80px;'>`
-            //         }
-            //         return data;
-            //     }
+            {
+                targets:7,
+                orderable:false,
+                render:function(data, type, row){
+                    if(type === 'display'){
+                        return `<img src='${base_url}assets/images/person.jpg' class='shadow-sm rounded-2' style='width:80px; height:80px;'>`
+                    }
+                    return data;
+                }
 
-            // }
+            }
            
         ]
         
@@ -123,26 +123,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
             if(results){
                 console.log(results);
 
-                // results.forEach((res,i) => {
+                results.forEach((res,i) => {
 
-                //     data_table.row.add([
-                //         i+1,
-                //         res.EMPID,
-                //         res.MCEMPID,
-                //         {
-                //             display: res.CREATEDON ? dateForm(res.CREATEDON) : '-',
-                //             sort: res.CREATEDON ? new Date(res.CREATEDON).getTime() : 0
-                //         },
-                //         res.DEPT,
-                //         res.DESIGN,
-                //         res.DIVISION,
-                //         res.IMGURL 
+                    data_table.row.add([
+                        i+1,
+                        res.EMPID,
+                        res.MCEMPID,
+                        {
+                            display: res.CREATEDON ? dateForm(res.CREATEDON) : '-',
+                            sort: res.CREATEDON ? new Date(res.CREATEDON).getTime() : 0
+                        },
+                        res.DEPT,
+                        res.DESIGN,
+                        res.DIVISION,
+                        res.IMGURL 
                         
-                //     ])
+                    ])
 
-                // });
+                });
 
-                // data_table.draw();
+                data_table.draw();
                
                 // SHOW TABLE
                 table_result.style.display='block';
