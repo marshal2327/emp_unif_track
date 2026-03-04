@@ -232,7 +232,7 @@
 /* FOR TABLE AND REPORT STYLES */
 
 .dataTables_wrapper{
-    max-height: 450 px;
+    max-height: 450px;
     overflow-y: scroll;
     box-sizing: border-box;  
     scroll-snap-type: y mandatory;
