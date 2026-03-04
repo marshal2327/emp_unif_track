@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
                 });
 
-                // data_table.draw();
+                data_table.draw();
                
                 // SHOW TABLE
                 table_result.style.display='block';
