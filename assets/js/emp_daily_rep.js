@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     console.log('EMP DAILY REPORT PARSED');
-    console.log(base_url+'assets/images/noimage.png');
+    // console.log(base_url);
 
 
     
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 render:function(data, type, row){
                     if(type === 'display'){
                         return `<img 
-                        src="${base_url}axpattach/cr/empunifhel/${data}" 
+                        src="https://erp.crgarments.com:8443/axpattach/cr/empunifhel/${data}" 
                         class="shadow-sm rounded-2"
                         style="width:80px; height:80px; object-fit:cover;">`;
                     }
