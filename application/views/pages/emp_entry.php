@@ -100,7 +100,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                         <div style='width:115px; height:140px;' class="card rounded-3 shadow">
                             <img id='emp_img' class="card-img-top rounded-top-3 "
-                                style='width:100%; min-height:100px; border-bottom:1px solid grey;'
+                                style='width:100%; min-height:115px; border-bottom:1px solid grey;'
                                 src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
