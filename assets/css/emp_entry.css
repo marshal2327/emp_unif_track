@@ -48,10 +48,10 @@
     position: relative;
 }
 
-#navbar img{
+/* #navbar img{
     position: absolute;
     left: 2%;
-}
+} */
 
 #emp_selectbox{
     box-sizing: border-box;
@@ -227,6 +227,75 @@
     object-fit: cover;
     border-radius: 0.5rem !important;
 }
+
+/* -------------------------------------------------------------- */
+/* FOR TABLE AND REPORT STYLES */
+
+.dataTables_wrapper{
+    max-height: 500px;
+    overflow-y: scroll;
+    box-sizing: border-box;  
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 55px;
+    transition: opacity 0.2s ease;
+}
+
+.dataTable tbody>tr{
+    scroll-snap-align: start;
+}
+
+
+.dataTable{
+    margin-top: 2% !important;
+    box-sizing: border-box;
+    
+}
+
+.dataTable thead, .dataTables_filter{
+    position: sticky;
+    top: -1%;
+    left: 0;
+}
+
+.dataTable thead tr>th{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 450;
+    vertical-align: middle;
+    text-align: center;
+    background: rgb(218, 218, 218);
+    border-right: 1px solid white;
+    border-bottom: 1px solid grey;
+    
+}
+
+.dataTable tbody tr>td{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    border-right: 1px solid white;
+    vertical-align: middle;
+    text-align: center;
+}   
+
+.dataTable tbody tr.even{
+    border-right: 1px solid white;
+    background: rgb(233, 233, 233);
+}
+
+.table{
+    --bs-table-bg: transparent !important;
+}
+
+/* FOR TRANSITION */
+
+#table_result{
+    transition: opacity 0.3s ease;
+    display: none;
+    opacity: 0;
+
+}
+
+
 
 
 

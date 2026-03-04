@@ -22,7 +22,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
 <!-- <?php echo '<pre>'; print_r($emp_datas);?> -->
 
-<body class='bg-light'>
+<body style="background-color:whitesmoke;">
 
     <div id="overlay">
         <lottie-player id='lottie' src="<?php echo base_url()?>assets/gif/loading.json" background='transparent'
@@ -40,12 +40,24 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
             <!-- NAVIGATION -->
             <div class="col-12 p-0">
 
-                <nav id='navbar' class="navbar navbar-light shadow-sm p-2 d-flex justify-content-center">
-
+                <nav id='navbar' class="navbar navbar-light bg-light shadow-sm p-2">
+                    
+                  
                     <img class="ms-1" width="35" height="40" src="<?php echo base_url()?>assets/images/crlogo.png"
-                        alt="crlogo" style="filter:invert(0%);">
-                    <span class="navbar-brand h3 fs-5 m-0" style="font-family:Mozilla Headline,sans-serif;">EMP
-                        UNIFORM ENTRY</span>
+                    alt="crlogo" style="filter:invert(0%);">
+            
+
+                    <span class="navbar-brand fs-5" style="font-family:Mozilla Headline,sans-serif;" >EMP UNIFORM ENTRY</span>
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-outline-none bg-light fw-bold fs-6" data-bs-toggle="dropdown">⋮</button>
+
+                        <ul class="dropdown-menu dropdown-menu-end text-center p-0 m-0">
+                            <li><a href="<?= base_url()?>Main" class="dropdown-item py-1 m-0 border-bottom border-1" style="font-family:Poppins, sans-serif; font-size:13px;">Home</a></li>
+                            <li><a href="<?= base_url()?>Main/unif_daily_rep_page" class="dropdown-item py-1 m-0" style="font-family:Poppins, sans-serif; font-size:13px;">Reports</a></li>
+                        </ul>
+
+                    </div>
 
                 </nav>
 
@@ -86,9 +98,9 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                     <!-- </div> -->
                     <div class="card-title d-flex justify-content-evenly pt-3">
 
-                        <div style='width:100px; height:120px;' class="card rounded-3 shadow">
+                        <div style='width:100px; height:125px;' class="card rounded-3 shadow">
                             <img id='emp_img' class="card-img-top rounded-top-3 "
-                                style='width:100%; min-height:95px; border-bottom:1px solid grey;'
+                                style='width:100%; min-height:100px; border-bottom:1px solid grey;'
                                 src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
@@ -97,10 +109,10 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             </div>
                         </div>
 
-                        <div id='cap_img_box' style='width:100px; height:120px; display:none;'
+                        <div id='cap_img_box' style='width:100px; height:125px; display:none;'
                             class="card rounded-3 shadow">
                             <img id='cap_img' class="card-img-top rounded-top-3"
-                                style='width:100%; min-height:95px;  border-bottom:1px solid grey;'
+                                style='width:100%; min-height:100px; border-bottom:1px solid grey;'
                                 src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
@@ -160,7 +172,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                         <div id='capture_box' class="row m-0 mt-1 d-flex justify-content-between">
 
-                            <button type="button" id='pic_btn'
+                            <button type="button" disabled id='pic_btn'
                                 class=" disable btn btn-outline-none bg-primary shadow-sm text-white fw-bold "
                                 style='width:49%; font-size:14px; font-family:Poppins,sans-serif;'
                                 data-bs-toggle="modal" data-bs-target="#takePic">Take Photo</button>

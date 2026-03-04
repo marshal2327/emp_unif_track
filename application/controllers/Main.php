@@ -56,7 +56,6 @@ class Main extends CI_Controller{
 
     }
 
-
     public function unif_entry(){
 
         date_default_timezone_set('Asia/Kolkata');
@@ -129,16 +128,61 @@ class Main extends CI_Controller{
                 return;
             }
 
-            // echo '<pre>'; print_r($_FILES);exit;
-
-            
-
-        
+            // echo '<pre>'; print_r($_FILES);exit;        
         }
-
 
     }
 
+// FOR DAILY REPORTS
+
+public function unif_daily_report(){
+
+    $from_dt = $_GET['from_dt'];
+    $to_dt = $_GET['to_dt'];
+
+    if(empty($from_dt) || empty($to_dt)){
+        ?>  
+        <script>alert("Date shouldn't be Empty !!");return;</script>
+        <?php
+    }
+
+    $params = array('from_dt' => $from_dt, 'to_dt' => $to_dt);
+
+    $results['results'] = $this->Reports_model->daily_entry_report($params);
+
+}
+
+public function unif_daily_rep_page(){
+
+    $this->load->view('reports/unif_daily_reports');
+    
+}
+
+public function unif_daily_rep(){
+    // echo '<pre>'; print_r('DAILY REPORTS');
+
+    $from_dt = $_GET['from_dt'];
+    $to_dt = $_GET['to_dt'];
+
+    if(empty($from_dt) || empty($to_dt)){
+        ?>  
+        <script>alert("Date shouldn't be Empty !!");return;</script>
+        <?php
+    }
+    
+    $params = array('from_dt' => $from_dt, 'to_dt' => $to_dt);
+    
+    $results = $this->Reports_model->daily_entry_report($params);
+    echo json_encode($results);
+    // echo '<pre>'; print_r($results);exit;
+
+
+
+
+    
+
+}
+    
 
 }
 
