@@ -232,16 +232,11 @@
 /* -------------------------------------------------------------- */
 /* FOR TABLE AND REPORT STYLES */
 
-
-input[type="date"]{
-    -webkit-appearance: none;
-    appearance: none;
-}
-
 input[type="date"]::-webkit-calendar-picker-indicator{
-    opacity: 0;
-    display: none;
+    position: absolute;
+    inset: 0;
 }
+
 
 .dataTables_wrapper{
     max-height: 450px;
