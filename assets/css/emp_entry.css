@@ -233,9 +233,9 @@
 /* FOR TABLE AND REPORT STYLES */
 
 input[type="date"]::-webkit-calendar-picker-indicator{
-    position: absolute;
-    inset: 0;
+    padding-right: 5px;
 }
+    
 
 
 .dataTables_wrapper{
