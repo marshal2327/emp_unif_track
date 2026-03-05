@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         return `<img 
                         src="https://erp.crgarments.com:8443/axpattach/cr/empunifhel/${data}" 
                         class="shadow-sm rounded-2"
-                        style="width:80px; height:80px; object-fit:cover;">`;
+                        style="width:80px; border:1px solid lightgrey; height:80px; object-fit:cover;">`;
                     }
                     return data;
                 }

@@ -75,7 +75,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
             <div class="col-12 mt-3">
                 
-                <a href="<?= base_url()?>" class="">
+                <a href="#" onclick="window.history.back()" role='button' aria-label="back" class="">
                     <img width='25' height='25' src="<?= base_url()?>assets/images/previous.png" alt="">
                 </a>
                 
@@ -91,7 +91,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                     </div>
 
                     <div class="w-100 d-flex justify-content-center ">
-                        <button id='get_btn' style="font-family:Poppins, sans-serif; font-size:14px; font-weight:450;" class="btn btn-outilne-none rounded-3 shadow-sm bg-success text-white m-0 px-3">Get</button>
+                        <button id='get_btn' role="button" style="font-family:Poppins, sans-serif; font-size:14px; font-weight:450;" class="btn btn-outilne-none rounded-3 shadow-sm bg-success text-white m-0 px-3">Get</button>
                     </div>
 
                     <div id='table_result' class="table-responsive mt-2 shadow-sm">
