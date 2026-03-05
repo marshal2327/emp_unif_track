@@ -53,8 +53,8 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         <button class="btn btn-outline-none bg-light fw-bold my-0 py-0 fs-5" data-bs-toggle="dropdown">⋮</button>
 
                         <ul class="dropdown-menu dropdown-menu-end text-center p-0 m-0">
-                            <li><a href="<?= base_url()?>Main" class="dropdown-item py-1 m-0 border-bottom border-1" style="font-family:Poppins, sans-serif; font-size:13px;">Home</a></li>
-                            <li><a href="<?= base_url()?>Main/unif_daily_rep_page" class="dropdown-item py-1 m-0" style="font-family:Poppins, sans-serif; font-size:13px;">Reports</a></li>
+                            <li><a href="<?= base_url()?>Main" class="dropdown-item py-2 m-0 border-bottom border-1" style="font-family:Poppins, sans-serif; font-size:13px;">Home</a></li>
+                            <li><a href="<?= base_url()?>Main/unif_daily_rep_page" class="dropdown-item py-2 m-0" style="font-family:Poppins, sans-serif; font-size:13px;">Reports</a></li>
                         </ul>
 
                     </div>

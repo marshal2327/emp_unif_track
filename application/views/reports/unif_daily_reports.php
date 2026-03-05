@@ -79,19 +79,19 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                     <img width='25' height='25' src="<?= base_url()?>assets/images/previous.png" alt="">
                 </a>
                 
-                <div id='content_box' class="col-12 mt-4">
+                <div id='content_box' class="col-12 mt-3">
                     <h5 class="h5 fs-6 " style='font-family:Poppins,sans-serif;'>Uniform Entry Report</h5>
                 </div>
                 
                 <div class="rounded-3 bg-light">
                     <div class="w-auto d-flex justify-content-evenly py-2">
-                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="border-1 border-secondary bg-transparent py-2 rounded-pill px-2 text-center" type="date" name="frm_dt" id='from_dt' value="<?= date('Y-m-d')?>">
+                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="frm_dt" id='from_dt' value="<?= date('Y-m-d')?>">
                         <img width='20' height='15' class="my-auto" src="<?= base_url()?>assets/images/darrows1.png" alt="">
-                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="border-1 border-secondary bg-transparent py-2 rounded-pill px-2 text-center" type="date" name="to_dt" id="to_dt" value="<?= date('Y-m-d')?>">
+                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="to_dt" id="to_dt" value="<?= date('Y-m-d')?>">
                     </div>
 
                     <div class="w-100 d-flex justify-content-center ">
-                        <button id='get_btn' role="button" style="font-family:Poppins, sans-serif; font-size:14px; font-weight:450;" class="btn btn-outilne-none rounded-3 shadow-sm bg-success text-white m-0 px-3">Get</button>
+                        <button id='get_btn' role="button" style="font-family:Poppins, sans-serif; font-size:14px; font-weight:450;" class="btn btn-outilne-none rounded-3 shadow-sm bg-success text-white m-0 py-1 px-3">Get</button>
                     </div>
 
                     <div id='table_result' class="table-responsive mt-2 shadow-sm">
