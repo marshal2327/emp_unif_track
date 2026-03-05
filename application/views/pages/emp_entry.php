@@ -92,7 +92,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                 </div>
 
-                <div id='emp_card' class="card shadow border-1 mx-2 mt-2 rounded">
+                <div id='emp_card' class="card shadow border-1 mx-2 mt-1 rounded">
                     <!-- <div class="card-title"> -->
                     <!-- <h5 class='h5 fs-6'>Employee Details</h5> -->
                     <!-- </div> -->
@@ -123,7 +123,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                     </div>
 
-                    <div id='emp_info_box' class="card-body px-3 pt-3 d-flex flex-column gap-2 ">
+                    <div id='emp_info_box' class="card-body px-3 pt-2 d-flex flex-column gap-2 ">
 
                         <div id='name_box' class="emp_box">
                             <label for="">Name</label>

@@ -137,7 +137,9 @@
 
 #emp_card .card-title img{
     border-bottom: 1px solid rgb(211, 211, 211);
-    object-fit: fill;
+    object-fit:cover;
+    object-position:50% 28%;
+    transform: scale(1);
     /* width: 100px;
     height: 110px;
     object-fit:cover;
