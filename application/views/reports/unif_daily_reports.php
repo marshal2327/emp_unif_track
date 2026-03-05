@@ -85,9 +85,9 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                 
                 <div class="rounded-3 bg-light">
                     <div class="w-auto d-flex justify-content-evenly py-2">
-                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="frm_dt" id='from_dt' value="<?= date('Y-m-d')?>">
+                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="text-center border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="frm_dt" id='from_dt' value="<?= date('Y-m-d')?>">
                         <img width='20' height='15' class="my-auto" src="<?= base_url()?>assets/images/darrows1.png" alt="">
-                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="to_dt" id="to_dt" value="<?= date('Y-m-d')?>">
+                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="text-center border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="to_dt" id="to_dt" value="<?= date('Y-m-d')?>">
                     </div>
 
                     <div class="w-100 d-flex justify-content-center ">
