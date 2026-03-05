@@ -9,7 +9,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMP UNIFORM ENTRY</title>
-    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/emp_entry.css?v=321">
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/css/emp_entry.css?v=147">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,7 +112,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         <div id='cap_img_box' style='width:110px; height:125px; display:none;'
                             class="card rounded-3 shadow">
                             <img id='cap_img' class="card-img-top rounded-top-3"
-                                style='width:100%; min-height:100px; border-bottom:1px solid grey;'
+                                style='width:100%; min-height:100px; border-bottom:1px solid grey; object-fit:cover; object-position:50% 28%;'
                                 src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
@@ -236,7 +236,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
     let base_url = "<?php echo base_url()?>";
     let emp_datas = <?php echo json_encode($emp_datas)?>;
     </script>
-    <script src="<?php echo base_url()?>assets/js/emp_entry.js"></script>
+    <script src="<?php echo base_url()?>assets/js/emp_entry.js?v=145"></script>
 </body>
 
 </html>
