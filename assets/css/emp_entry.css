@@ -236,6 +236,7 @@
 
 input[type="date"]::-webkit-calendar-picker-indicator{
     position: absolute;
+    right: 0;
     opacity: 0;
 }
     

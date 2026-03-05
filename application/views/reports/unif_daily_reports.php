@@ -21,7 +21,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
     <!-- DataTables Bootstrap 5 CSS -->
 <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/emp_entry.css?v=123">
+<link rel="stylesheet" href="<?php echo base_url()?>assets/css/emp_entry.css?v=478">
 </head>
 
 <!-- <?php echo '<pre>'; print_r($results);?> -->
@@ -85,9 +85,9 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                 
                 <div class="rounded-3 bg-light">
                     <div class="w-auto d-flex justify-content-evenly py-2">
-                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="text-center border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="frm_dt" id='from_dt' value="<?= date('Y-m-d')?>">
+                        <input style='font-family:Poppins,sans-serif; font-size:13px; text-align:center;' class="text-center border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="frm_dt" id='from_dt' value="<?= date('Y-m-d')?>">
                         <img width='20' height='15' class="my-auto" src="<?= base_url()?>assets/images/darrows1.png" alt="">
-                        <input style='font-family:Poppins,sans-serif; font-size:13px;' class="text-center border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="to_dt" id="to_dt" value="<?= date('Y-m-d')?>">
+                        <input style='font-family:Poppins,sans-serif; font-size:13px; text-align:center;' class="text-center border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="to_dt" id="to_dt" value="<?= date('Y-m-d')?>">
                     </div>
 
                     <div class="w-100 d-flex justify-content-center ">
@@ -147,7 +147,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
         let base_url = "<?php echo base_url()?>";
     </script>
 
-    <script src="<?php echo base_url()?>assets/js/emp_daily_rep.js"></script>
+    <script src="<?php echo base_url()?>assets/js/emp_daily_rep.js?v=987"></script>
 </body>
 
 </html>
