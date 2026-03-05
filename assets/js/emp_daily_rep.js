@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     if(type === 'display'){
                         return `<img 
                         src="https://erp.crgarments.com:8443/axpattach/cr/empunifhel/${data}" 
+                        alt="No Image"
                         class="shadow-sm rounded-2"
                         style="width:80px; border:1px solid lightgrey; height:80px; object-fit:cover;">`;
                     }
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         res.DEPT,
                         res.DESIGN,
                         res.DIVISION,
-                        res.IMGNAME 
+                        res.IMGNAME
                         
                     ])
 
