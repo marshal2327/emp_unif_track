@@ -80,7 +80,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                 </a>
                 
                 <div id='content_box' class="col-12 mt-3">
-                    <h5 class="h5 fs-6 " style='font-family:Poppins,sans-serif;'>Uniform Entry Report</h5>
+                    <h5 id='h5' class="h5 fs-6 " style='font-family:Poppins,sans-serif;'>Uniform Entry Report</h5>
                 </div>
                 
                 <div class="rounded-3 bg-light">
