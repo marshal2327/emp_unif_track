@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         src="https://erp.crgarments.com:8443/axpattach/cr/empunifhel/${data}" 
                         alt="No Image"
                         class="shadow-sm rounded-2"
-                        style="width:80px; border:1px solid lightgrey; height:80px; object-fit:cover;">`;
+                        style="border:1px solid lightgrey; width:60px; height:60px; object-fit:cover;">`;
                     }
                     return data;
                 }
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                         res.DEPT,
                         res.DESIGN,
                         res.DIVISION,
-                        res.IMGNAME
+                        res.IMGNAME || 'do_not_delete/user.png'
                         
                     ])
 
