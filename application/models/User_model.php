@@ -42,9 +42,9 @@ class User_model extends CI_Model{
 
         // INSERT PROCESS
 
-        $this->db->query("insert into uniftrackmast(uniftrackmastid,cancel, sourceid,modifiedon, createdon, app_level, app_desc, docid, cdt, mastid, recdocid, empid, mcempid, dept, design, imgname, division)
-                        values((select nvl(max(uniftrackmastid),0)+1 from uniftrackmast), 'F', 0, SYSDATE, SYSDATE, 1, 1, '".$nxt_docid."',TRUNC(SYSDATE), 
-                        ".$cred['recid'].", '".$cred['docid']."', upper('".$cred['empid']."'), upper('".$cred['mcempid']."'), upper('".$cred['design']."'), upper('".$cred['dept']."'), '".$cred['filename']."', ".$cred['division']." )");
+        $this->db->query("insert into uniftrackmast(uniftrackmastid,cancel, sourceid, recid, modifiedon, createdon, app_level, app_desc, docid, cdt, mastid, recdocid, empid, mcempid, dept, design, prepby, remarks, imgname, division)
+                        values((select nvl(max(uniftrackmastid),0)+1 from uniftrackmast), 'F', 0, 0, SYSDATE, SYSDATE, 1, 1, '".$nxt_docid."',TRUNC(SYSDATE), 
+                        ".$cred['recid'].", '".$cred['docid']."', upper('".$cred['empid']."'), upper('".$cred['mcempid']."'), upper('".$cred['dept']."'), upper('".$cred['design']."'), '".$cred['prepby']."', '".$cred['remarks']."', '".$cred['filename']."', ".$cred['division']." )");
 
         if($this->db->affected_rows()>0){
             return TRUE;

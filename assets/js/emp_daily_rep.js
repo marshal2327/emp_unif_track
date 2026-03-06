@@ -12,14 +12,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
         let month = String(date.getMonth()+1).padStart(2,'0');
         let year = date.getFullYear();
     
-        let hours = String(date.getHours()).padStart(2,'0');
+        let hours = date.getHours();
+        
+        // console.log(hours);
+        let ampm = hours > 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours == 0 ? 12 : hours;  
+
+        hours = String(hours).padStart(2,'0');
+        
+
         let minutes = String(date.getMinutes()).padStart(2,'0');
         let seconds = String(date.getSeconds()).padStart(2,'0');
     
-        return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+        return `${day}/${month}/${year} ${hours}:${minutes}:${seconds} ${ampm}`;
     }
     
-    console.log(dateForm('03/03/2026 09:59:14'));
+    // console.log(dateForm('03/03/2026 01:59:14'));
 
 
 
@@ -31,6 +40,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         info:false,
         autoWidth: false,  
 
+        // INIT THE ROWID
         columnDefs:[
 
             {
@@ -55,12 +65,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
             },
 
             {
-                targets:7,
+                targets:9,
                 orderable:false,
                 render:function(data, type, row){
                     if(type === 'display'){
                         return `<img 
-                        src="https://erp.crgarments.com:8443/axpattach/cr/empunifhel/${data}" 
+                        src="https://erp.crgarments.com:8443/axpattach/CR/empunifhel/${data}" 
                         alt="No Image"
                         class="shadow-sm rounded-2"
                         style="border:1px solid lightgrey; width:60px; height:60px; object-fit:cover;">`;
@@ -113,6 +123,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         data_table.clear(); 
 
+
         // fdate='2026-03-01';
 
         try{
@@ -124,30 +135,37 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 throw new Error('Get Result Fetch Failed')
             }
 
+
             if(results){
                 console.log(results);
 
-                results.forEach((res,i) => {
+                results.forEach((row,i) => {
 
-                    data_table.row.add([
+                let newRow = data_table.row.add([
                         i+1,
-                        res.EMPID,
-                        res.MCEMPID,
+                        row.EMPID,
+                        row.MCEMPID,
                         {
-                            display: res.CREATEDON ? dateForm(res.CREATEDON) : '-',
-                            sort: res.CREATEDON ? new Date(res.CREATEDON).getTime() : 0
+                            display: row.CREATEDON ? dateForm(row.CREATEDON) : '-',
+                            sort: row.CREATEDON ? new Date(row.CREATEDON).getTime() : 0
                         },
-                        res.DEPT,
-                        res.DESIGN,
-                        res.DIVISION,
-                        res.IMGNAME || 'do_not_delete/user.png'
-                        
-                    ])
+                        row.DEPT,
+                        row.DESIGN,
+                        row.DIVISION,
+                        row.PREPBY,
+                        row.REMARKS,
+                        row.IMGNAME || 'do_not_delete/user.png'
+                    ]);
 
+                    // FOR STORE DATA ATTR FOR LATER RETRIVE
+                    $(newRow.node()).data('row',row);
+                    
+                  
                 });
 
                 data_table.draw();
-               
+
+
                 // SHOW TABLE
                 table_result.style.display='block';
                 setTimeout(() => {
@@ -155,6 +173,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 }, 200);
             }
 
+        
         }
         catch(err){
             console.error('Get Result Erro :',err);
@@ -162,8 +181,88 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     }
 
-    get_btn.onclick = get_res
+    get_btn.onclick = get_res;
 
+    
+    // CLICK TO SHOW THE ROW'S DETAILS
+    let ent_emp_img = $('#ent_emp_img')[0];
+    let ent_cap_img = $('#ent_cap_img')[0];
+    let ent_name = $('#ent_name')[0];
+    let ent_mcempid = $('#ent_mcempid')[0];
+    let ent_dept = $('#ent_dept')[0];
+    let ent_design = $('#ent_design')[0];
+    let ent_div = $('#ent_div')[0];
+    let ent_log = $('#ent_log')[0];
+    let ent_prepby = $('#ent_prepby')[0];
+    let ent_rem = $('#ent_rem')[0];
+
+
+    $('#table1 tbody').on('click','tr', async function(){
+
+        let row = $(this).data('row');  
+
+        if(!row){
+            return;
+        }
+
+        let mastid = row.MASTID;
+        let docid = row.DOCID;
+        let mcempid = row.MCEMPID;
+
+
+        // console.log(mastid, docid, mcempid);
+        ent_emp_img.src=''; ent_cap_img.src=''; ent_name.textContent=''; ent_mcempid.textContent=''; ent_dept.textContent='';
+        ent_design.textContent=''; ent_div.textContent=''; ent_log.textContent=''; ent_prepby.textContent=''; ent_rem.textContent='';
+
+        
+        try{    
+
+            const resp = await fetch(base_url + `Main/get_emp_entryinfo?mastid=${encodeURIComponent(mastid)}&docid=${encodeURIComponent(docid)}&mcempid=${encodeURIComponent(mcempid)}`);
+            const res = await resp.json();
+
+            if(!resp.ok) throw new Error('Fetching Error');
+
+            if(!res['status']){
+                console.log(res);
+
+                let row = res['user_info'][0];
+
+                if(res['user_img']){
+                    ent_emp_img.src='data:image/'+ res['user_img'].FTYPE+';base64,'+ res['user_img'].IMG;
+                }
+
+                ent_cap_img.src= row.IMGNAME ? `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/${row.IMGNAME}` : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/do_not_delete/user.png`;
+                console.log(ent_cap_img.src);
+                ent_name.textContent=row.EMPID;
+                ent_mcempid.textContent=row.MCEMPID
+                ent_dept.textContent=row.DEPT;
+                ent_design.textContent=row.DESIGN;
+                ent_div.textContent=row.DIVISION;
+                ent_log.textContent=dateForm(row.CREATEDON);
+                ent_prepby.textContent=row.PREPBY;
+                ent_rem.textContent=row.REMARKS;
+
+                let modalElem = document.getElementById('entryInfo');
+                let ModalInstance = bootstrap.Modal.getOrCreateInstance(modalElem);
+                ModalInstance.show();
+
+            }
+
+
+            
+
+
+        }
+        catch(err){
+            console.error('Entry Fetch Error :', err);
+        }
+
+
+
+
+        
+        
+    });
 
 
 });

@@ -22,6 +22,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
     <!-- DataTables Bootstrap 5 CSS -->
 <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
 <link rel="stylesheet" href="<?php echo base_url()?>assets/css/emp_entry.css?v=478">
+
 </head>
 
 <!-- <?php echo '<pre>'; print_r($results);?> -->
@@ -51,8 +52,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         alt="crlogo" style="filter:invert(0%);">
 
 
-                    <span class="navbar-brand fs-5" style="font-family:Mozilla Headline,sans-serif;">EMP UNIFORM
-                        ENTRY</span>
+                    <span class="navbar-brand fs-5" style="font-family:Mozilla Headline,sans-serif;">EMP WITHOUT UNIFORM</span>
 
                     <div class="dropdown">
                         <button class="btn btn-outline-none bg-light fw-bold my-0 py-0 fs-5" data-bs-toggle="dropdown">⋮</button>
@@ -84,6 +84,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                 </div>
                 
                 <div class="rounded-3 bg-light">
+
                     <div class="w-auto d-flex justify-content-evenly py-2">
                         <input style='font-family:Poppins,sans-serif; font-size:13px; text-align:center;' class="text-center border-1 border-secondary bg-transparent py-1 rounded-pill px-1 text-center" type="date" name="frm_dt" id='from_dt' value="<?= date('Y-m-d')?>">
                         <img width='20' height='15' class="my-auto" src="<?= base_url()?>assets/images/darrows1.png" alt="">
@@ -96,16 +97,18 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                     <div id='table_result' class="table-responsive mt-2 shadow-sm">
                 
-                        <table id='table1' class="table table-hover table-align-middle bg-none">
+                        <table id='table1' class="table table-align-middle bg-none">
                             <thead >
                                 <tr>
                                     <th class="text-center align-middle">Sl.No</th>
                                     <th class="text-center align-middle">Name</th>
-                                    <th class="text-center align-middle">MC Code</th>
+                                    <th style='white-space:nowrap;' class="text-center align-middle">MC Code</th>
                                     <th class="text-center align-middle">Entry Log</th>
                                     <th class="text-center align-middle">Department</th>
                                     <th class="text-center align-middle">Designation</th>
                                     <th class="text-center align-middle">Division</th>
+                                    <th style="white-space:wrap;" class="text-center align-middle">Prepared By</th>
+                                    <th class="text-center align-middle">Remarks</th>
                                     <th class="text-center align-middle">Photo</th>
                                 </tr>
                             </thead>
@@ -124,6 +127,101 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                         </table>
                     </div>
+
+                    <div id='entryInfo' class="modal fade mt-5 pt-2">
+                        <div class="modal-dialog">
+
+                            <div class="modal-content">
+
+                                <div class="modal-header py-2">
+                                    <h3 class="modal-title text-center h3 fs-5 w-100 text-center ps-4">Entry Info</h3>
+                                    <button data-bs-dismiss="modal" class="btn btn-close"></button>
+                                </div>
+
+                                <div class="modal-body">
+
+                                    <div class="row d-flex justify-content-evenly">
+
+                                        <!-- PROFILE IMG -->
+                                        <div style='width:110px; height:125px;' class="card rounded-3 shadow px-0 mx-0">
+                                                <img id='ent_emp_img' class="card-img-top rounded-top-3 " 
+                                                style='width:100%; min-height:100px; border-bottom:1px solid grey; object-fit:cover; object-position:50% 28%; transform:scale(1);'
+                                                src="<?php echo base_url()?>assets/images/person.jpg" alt="user_prof_pic">
+                                            <div class="card-body p-0 bg-light rounded-bottom h-100 d-flex justify-content-center align-items-center">
+                                                <p class="card-text text-center" style='font-family:Poppins,sans-serif; font-size:12px; color:grey;'>Profile Img</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- CAPTURED IMG -->
+                                        <div style='width:110px; height:125px;' class="card rounded-3 shadow px-0 mx-0">
+                                                <img id='ent_cap_img' class="card-img-top rounded-top-3 " 
+                                                style='width:100%; min-height:100px; border-bottom:1px solid grey; object-fit:cover; object-position:50% 28%; transform:scale(1);'
+                                                src="<?php echo base_url()?>assets/images/person.jpg" alt="user_cap_pic">
+                                            <div class="card-body p-0 bg-light rounded-bottom h-100 d-flex justify-content-center align-items-center">
+                                                <p class="card-text text-center" style='font-family:Poppins,sans-serif; font-size:12px; color:grey;'>Captured Img</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card rounded-3 mt-3 shadow-sm">
+
+                                        <div class="card-body d-flex justify-content-between align-items-end  py-2 px-2">
+                                            <label class="card-text fw-semibold" for="">Name</label>
+                                            <p id='ent_name' class="card-text">Marshal Augustine A</p>
+                                        </div>
+                                        <hr class="p-0 m-0">
+                                        <div class="card-body d-flex justify-content-between py-2 px-2">
+                                            <label class="card-text fw-semibold" for="">MC Code</label>
+                                            <p id='ent_mcempid' class="card-text">HOS42245</p>
+                                        </div>
+                                        <hr class="p-0 m-0 ">
+                                        <div class="card-body d-flex justify-content-between py-2 px-2">
+                                            <label class="card-text fw-semibold" for="">Department</label>
+                                            <p id='ent_dept' class="card-text">ERP</p>
+                                        </div>
+                                        <hr class="p-0 m-0 ">
+                                        <div class="card-body d-flex justify-content-between py-2 px-2">
+                                            <label class="card-text fw-semibold" for="">Designation</label>
+                                            <p id='ent_design' class="card-text">Software Developmen</p>
+                                        </div>
+                                        <hr class="p-0 m-0 ">
+                                        <div class="card-body d-flex justify-content-between py-2 px-2">
+                                            <label class="card-text fw-semibold" for="">Division</label>
+                                            <p id='ent_div' class="card-text">C.R.Garments</p>
+                                        </div>
+                                        <hr class="p-0 m-0 ">
+                                        <div class="card-body d-flex justify-content-between py-2 px-2">
+                                            <label class="card-text fw-semibold" for="">Entry Log</label>
+                                            <p id='ent_log' class="card-text">06/03/2026 15:17:32</p>
+                                        </div>
+                                        <hr class="p-0 m-0 ">
+                                        <div class="card-body d-flex justify-content-between py-2 px-2">
+                                            <label class="card-text fw-semibold" for="">Prepared By</label>
+                                            <p id='ent_prepby' class="card-text">HR</p>
+                                        </div>
+                                        <hr class="p-0 m-0 ">
+                                        <div class="card-body d-flex justify-content-between py-2 px-2">
+                                            <label class="card-text fw-semibold" for="">Remarks</label>
+                                            <p id='ent_rem' class="card-text">Test 1</p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <button data-bs-dismiss="modal" style="font-family:Poppins,sans-serif; font-size:14px; font-weight:450;" class="btn btn-outline-none bg-info text-white">Close</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
                 
             </div>

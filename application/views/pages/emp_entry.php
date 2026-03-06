@@ -47,7 +47,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                     alt="crlogo" style="filter:invert(0%);">
             
 
-                    <span class="navbar-brand fs-5" style="font-family:Mozilla Headline,sans-serif;" >EMP UNIFORM ENTRY</span>
+                    <span class="navbar-brand fs-5" style="font-family:Mozilla Headline,sans-serif;" >EMP WITHOUT UNIFORM</span>
                     
                     <div class="dropdown">
                         <button class="btn btn-outline-none bg-light fw-bold my-0 py-0 fs-5" data-bs-toggle="dropdown">⋮</button>
@@ -100,7 +100,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                         <div style='width:110px; height:125px;' class="card rounded-3 shadow">
                             <img id='emp_img' class="card-img-top rounded-top-3 "
-                                style='width:100%; min-height:100px; border-bottom:1px solid grey;'
+                                style='width:100%; min-height:100px; border-bottom:1px solid grey; object-fit:cover; object-position:50% 28%; transform:scale(1);'
                                 src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
@@ -112,7 +112,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         <div id='cap_img_box' style='width:110px; height:125px; display:none;'
                             class="card rounded-3 shadow">
                             <img id='cap_img' class="card-img-top rounded-top-3"
-                                style='width:100%; min-height:100px; border-bottom:1px solid grey; object-fit:cover; object-position:50% 28%;'
+                                style='width:100%; min-height:100px; border-bottom:1px solid grey; object-fit:cover; object-position:50% 28%; transform:scale(1);'
                                 src="<?php echo base_url()?>assets/images/nouserimg.jpg" alt="user_prof_pic">
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">

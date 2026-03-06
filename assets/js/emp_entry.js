@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         // console.log(data);
         // return
         
-        if(data != null){   
+        if(!data['status']){   
             
             
             console.log(data);
@@ -379,6 +379,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
             return
         }
 
+        if(!form_datas){
+            alert('Fill All Details !!');
+            return
+        }
+
+
+        form_datas.set('prepby', prebpy_val.value);
+        form_datas.set('remarks',remarks_val.value);
+
+        console.log(Object.fromEntries(form_datas.entries()));
 
         save_entry_btn.disabled=true;
         
@@ -390,12 +400,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }, 100);
         
     
-        if(!form_datas){
-            alert('Fill All Details !!');
-            return
-        }
-
-        console.log(Object.fromEntries(form_datas.entries()));
+        
+        // console.log(Object.fromEntries(form_datas.entries()));
         
         try{
 

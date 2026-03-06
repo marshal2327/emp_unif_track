@@ -129,25 +129,6 @@
 }
 
 
-
-#emp_card .card-title{
-     /* box-sizing: border-box; */
-    /* border: 1px solid black; */
-}
-
-#emp_card .card-title img{
-    border-bottom: 1px solid rgb(211, 211, 211);
-    object-fit:cover;
-    object-position:50% 28%;
-    transform: scale(1);
-    /* width: 100px;
-    height: 110px;
-    object-fit:cover;
-    scale: 1    ;
-    border-radius: 50%;
-    box-shadow: 0px 0px 8px grey; */
-}
-
 .emp_box{
     display: grid;
     grid-template-columns: 35% 5% 60%;
@@ -285,16 +266,25 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     border-right: 1px solid white;
     vertical-align: middle;
     text-align: center;
+    transition: all 0.2s ease;
 }   
 
-.dataTable tbody tr:active{
-    pointer-events:none;
-}   
+.dataTable tbody tr{
+    transition: all 0.2s ease;
+}
 
+    
 .dataTable tbody tr.even{
     border-right: 1px solid white;
-    background: rgb(236, 235, 235);
+    background: rgb(236, 236, 236);
 }
+
+.dataTable tbody tr:active{
+    /* pointer-events:none; */
+    background: rgb(184, 184, 184);
+}   
+
+
 
 
 .table{
@@ -308,6 +298,23 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     transition: opacity 0.3s ease;
     display: none;
     opacity: 0;
+}
+
+
+/* FOR EMP ENTRY INFO MODAL */
+
+#entryInfo label{
+    font-family: 'Poppins',sans-serif;
+    font-size: 14px;
+}
+
+#entryInfo p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+#entryInfo hr{
+    opacity: 0.17 !important;
 }
 
 

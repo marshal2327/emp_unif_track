@@ -178,6 +178,34 @@ public function unif_daily_rep(){
 
 }
 
+// GET EMP ENTRY INFOS
+public function get_emp_entryinfo(){
+
+    if($_SERVER['REQUEST_METHOD'] == 'GET'){
+
+        $params = $_GET;
+
+        $results = $this->Reports_model->emp_entry_report($params);
+
+        if(!empty($results['user_img'])){
+            $lob = $results['user_img']['IMG'];
+            $results['user_img']['IMG'] = base64_encode($lob->load());
+            echo json_encode($results);
+        }elseif(!empty($results['user_info'])){
+            echo json_encode($results);
+        }else{
+            echo json_encode(array('status'=>FALSE));
+        }
+
+        // echo '<pre>'; print_r($results);exit; 
+
+
+
+    }
+
+
+}
+
 public function get_user_img(){
 
     // // $fname = $_GET['imgname'];
