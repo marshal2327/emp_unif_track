@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             return;
         }
 
+        
         let mastid = row.MASTID;
         let docid = row.DOCID;
         let mcempid = row.MCEMPID;
@@ -227,12 +228,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
                 let row = res['user_info'][0];
 
-                if(res['user_img']){
-                    ent_emp_img.src='data:image/'+ res['user_img'].FTYPE+';base64,'+ res['user_img'].IMG;
-                }
+              
+                ent_emp_img.src=res['user_img'] ? 'data:image/'+ res['user_img'].FTYPE+';base64,'+ res['user_img'].IMG : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/do_not_delete/user.png`;
+                
 
                 ent_cap_img.src= row.IMGNAME ? `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/${row.IMGNAME}` : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/do_not_delete/user.png`;
-                console.log(ent_cap_img.src);
                 ent_name.textContent=row.EMPID;
                 ent_mcempid.textContent=row.MCEMPID
                 ent_dept.textContent=row.DEPT;
@@ -246,11 +246,42 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 let ModalInstance = bootstrap.Modal.getOrCreateInstance(modalElem);
                 ModalInstance.show();
 
-            }
 
+                // PREVIEW FROM MODAL IMG
+                let prev_head = $('#prev_head')[0];
+                let prev_img = $('#prev_img')[0];
 
+                prev_head.textContent='';
+
+                // FOR EMP IMG PREVIEW
+                $('#ent_emp_img').on('click', function(d){
+                    d.stopPropagation();
+
+                    prev_head.textContent='Profile Image';
+                    prev_img.src= res['user_img'] ? 'data:image/'+ res['user_img'].FTYPE+';base64,'+ res['user_img'].IMG : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/do_not_delete/user.png`;
+                    
+                    let modInst = bootstrap.Modal.getOrCreateInstance(document.getElementById('imgPrev'));
+                    modInst.show();
+                
+                    console.log(this);
+                });
             
+            
+                // FOR CAP IMG PREVIEW
+                $('#ent_cap_img').on('click', function(d){
+                    d.stopPropagation();
 
+                    prev_head.textContent='Captured Image';
+                    prev_img.src= row.IMGNAME ? `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/${row.IMGNAME}` : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/do_not_delete/user.png`
+                
+                    let modInst = bootstrap.Modal.getOrCreateInstance(document.getElementById('imgPrev'));
+                    modInst.show();
+                
+                    console.log(this);
+                });
+
+
+            }
 
         }
         catch(err){
@@ -259,9 +290,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 
 
-
-        
-        
     });
 
 

@@ -220,6 +220,26 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                         </div>
 
+                        <!-- IMG PREVIEW MODAL -->
+                         <div id='imgPrev' class="modal bg-dark fade">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header py-2 bg-light">
+                                        <h3 id='prev_head' class="modal-title fs-3 w-100 text-center ms-4">Capture Img</h3>
+                                        <button data-bs-dismiss="modal" class="btn btn-close bg-light"></button>
+                                    </div>
+                                    <div class="modal-body bg-light rounded-bottom-3 pt-1">
+
+                                        <div class="card rounded-3">
+                                             <img id='prev_img' class="rounded-3 img-fluid shadow" src="<?= base_url()?>assets/images/person.jpg" alt="">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                         </div>
+
                     </div>
 
                 </div>
