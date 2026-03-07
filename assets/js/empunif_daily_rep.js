@@ -234,10 +234,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 let row = res['user_info'][0];
 
               
-                ent_emp_img.src=res['user_img'] ? 'data:image/'+ res['user_img'].FTYPE+';base64,'+ res['user_img'].IMG : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/do_not_delete/user.png`;
+                ent_emp_img.src=res['user_img'] ? 'data:image/'+ res['user_img'].FTYPE+';base64,'+ res['user_img'].IMG : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/empunif/do_not_delete/user.png`;
                 
 
-                ent_cap_img.src= row.IMGNAME ? `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/empunif/${row.IMGNAME}` : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/do_not_delete/user.png`;
+                ent_cap_img.src= row.IMGNAME ? `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/empunif/${row.IMGNAME}` : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/empunif/do_not_delete/user.png`;
                 ent_name.textContent=row.EMPID;
                 ent_mcempid.textContent=row.MCEMPID
                 ent_dept.textContent=row.DEPT;
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     d.stopPropagation();
 
                     prev_head.textContent='Profile Image';
-                    prev_img.src= res['user_img'] ? 'data:image/'+ res['user_img'].FTYPE+';base64,'+ res['user_img'].IMG : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/do_not_delete/user.png`;
+                    prev_img.src= res['user_img'] ? 'data:image/'+ res['user_img'].FTYPE+';base64,'+ res['user_img'].IMG : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/empunif/do_not_delete/user.png`;
                     
                     let modInst = bootstrap.Modal.getOrCreateInstance(document.getElementById('imgPrev'));
                     modInst.show();
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     d.stopPropagation();
 
                     prev_head.textContent='Captured Image';
-                    prev_img.src= row.IMGNAME ? `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/empunif/${row.IMGNAME}` : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/do_not_delete/user.png`
+                    prev_img.src= row.IMGNAME ? `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/empunif/${row.IMGNAME}` : `https://erp.crgarments.com:8443/axpattach/CR/empunifhel/empunif/do_not_delete/user.png`
                 
                     let modInst = bootstrap.Modal.getOrCreateInstance(document.getElementById('imgPrev'));
                     modInst.show();
