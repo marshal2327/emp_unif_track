@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', ()=>{
     console.log('EMP UNIF ENTRY PAGE PARSED' );
 
-    console.log(base_url);
-    console.log(base_url+'assets/images/nouserimg.jpg');
+    // console.log(base_url);
+    // console.log(base_url+'assets/images/nouserimg.jpg');
 
     // GLOBAL VAR FOR SAVE ENTRY
     let form_datas = new FormData();
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 .then(blob => {
                     let imgFile = new File([blob], "cap.jpeg", {type:blob.type});
                     form_datas.set('uimg', imgFile);
-                    console.log(imgFile);
+                    // console.log(imgFile);
                 })
 
                 // CLOSE MODAL
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     async function fetch_emp(res){
 
-        console.log(res);   
+        // console.log(res);   
         
         // CLOSE ANIMATION
         if(emp_option.classList.contains('show')) emp_option.classList.remove('show'); emp_option.classList.add('close');
@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             //     design: data['user_info'][0].DESIGNATION
             // };
 
-            console.log(Object.fromEntries(form_datas.entries()));
+            // console.log(Object.fromEntries(form_datas.entries()));
             
 
             setTimeout(() => {

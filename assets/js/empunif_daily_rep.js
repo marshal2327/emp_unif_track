@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             if(!resp.ok) throw new Error('Fetching Error');
 
             if(!res['status']){
-                console.log(res);
+                // console.log(res);
 
                 let row = res['user_info'][0];
 
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     let modInst = bootstrap.Modal.getOrCreateInstance(document.getElementById('imgPrev'));
                     modInst.show();
                 
-                    console.log(this);
+                    // console.log(this);
                 });
             
             
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                     let modInst = bootstrap.Modal.getOrCreateInstance(document.getElementById('imgPrev'));
                     modInst.show();
                 
-                    console.log(this);
+                    // console.log(this);
                 });
 
 
