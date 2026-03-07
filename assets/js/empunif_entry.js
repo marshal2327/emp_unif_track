@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', ()=>{
-    console.log('EMP ENTYR PAGE PARSED' );
+    console.log('EMP UNIF ENTRY PAGE PARSED' );
 
     console.log(base_url);
     console.log(base_url+'assets/images/nouserimg.jpg');

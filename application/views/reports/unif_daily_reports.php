@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMP UNIFORM REPORTS</title>
+    <title>EMP WITHOUT UNIFORM REPORTS</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -21,7 +21,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
     <!-- DataTables Bootstrap 5 CSS -->
 <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/emp_entry.css?v=365">
+<link rel="stylesheet" href="<?php echo base_url()?>assets/css/empunif_entry.css?v=365">
 
 </head>
 
@@ -265,7 +265,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
         let base_url = "<?php echo base_url()?>";
     </script>
 
-    <script src="<?php echo base_url()?>assets/js/emp_daily_rep.js?v=587"></script>
+    <script src="<?php echo base_url()?>assets/js/empunif_daily_rep.js?v=587"></script>
 </body>
 
 </html>

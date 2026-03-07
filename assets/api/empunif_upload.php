@@ -1,5 +1,5 @@
 <?php
-// UPLOAD IMG FROM EMPUNIFHEL
+// UPLOAD IMG FROM EMPUNIF
 
 header('Content-Type: application/json');
 
@@ -14,7 +14,7 @@ if($_FILES['uimg']['error'] !== 0){
     exit;
 }
 
-$directory = '\\\\10.0.1.184\\axpattach\\CR\\empunifhel\\';
+$directory = '\\\\10.0.1.184\\axpattach\\CR\\empunifhel\\empunif';
 
 $ext = pathinfo($_FILES['uimg']['name'], PATHINFO_EXTENSION);
 

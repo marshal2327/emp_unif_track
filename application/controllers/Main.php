@@ -19,7 +19,7 @@ class Main extends CI_Controller{
 
         // $img = ImageDecoder($emp_datas['emp_datas']['IMG']['IMG'], $emp_datas['emp_datas']['IMG']['FTYPE']);
 
-        $this->load->view('pages/emp_entry',$emp_datas);
+        $this->load->view('pages/empunif_entry',$emp_datas);
 
         // echo "<pre>"; print_r($emp_datas);exit;
 
