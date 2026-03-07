@@ -128,11 +128,10 @@
     background: lightblue;
 }
 
-
+/* 
 .emp_box{
     display: grid;
     grid-template-columns: 35% 5% 60%;
-    /* border: 1px solid black; */
     justify-items: center;
 }
 
@@ -152,7 +151,22 @@
     font-family: 'Poppins', sans-serif;
     justify-self: center;
     text-align: center;
+} */
+
+#emp_info_box label{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
 }
+
+#emp_info_box p{
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+#emp_info_box hr{
+    opacity: 0.17 !important;
+}
+
 
 #prepby_box input{
     border: none;

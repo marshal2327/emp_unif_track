@@ -128,8 +128,8 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                         </table>
                     </div>
 
-                    <div id='entryInfo' class="modal fade mt-5 pt-2">
-                        <div class="modal-dialog">
+                    <div id='entryInfo' class="modal fade">
+                        <div class="modal-dialog modal-dialog-centered">
 
                             <div class="modal-content">
 
@@ -225,7 +225,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header py-2 bg-light">
-                                        <h3 id='prev_head' class="modal-title fs-3 w-100 text-center ms-4">Capture Img</h3>
+                                        <h3 id='prev_head' class="modal-title fs-5 w-100 text-center ms-4">Capture Img</h3>
                                         <button data-bs-dismiss="modal" class="btn btn-close bg-light"></button>
                                     </div>
                                     <div class="modal-body bg-light rounded-bottom-3 pt-1">

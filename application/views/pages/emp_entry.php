@@ -92,7 +92,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
                 </div>
 
-                <div id='emp_card' class="card shadow border-1 mx-2 mt-1 rounded">
+                <div id='emp_card' class="card shadow border-1 mx-2 px-2 mt-1 rounded">
                     <!-- <div class="card-title"> -->
                     <!-- <h5 class='h5 fs-6'>Employee Details</h5> -->
                     <!-- </div> -->
@@ -105,7 +105,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
                                 <p class="card-text text-center"
-                                    style='font-family:Poppins,sans-serif; font-size:12px; color:grey;'>Profile Img</p>
+                                    style='font-family:Poppins,sans-serif; font-size:13px; color:grey;'>Profile Img</p>
                             </div>
                         </div>
 
@@ -117,13 +117,53 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             <div
                                 class="card-body p-0 bg-light rounded-bottom  h-100 d-flex justify-content-center align-items-center">
                                 <p class="card-text text-center"
-                                    style='font-family:Poppins,sans-serif; font-size:12px; color:grey;'>Captured Img</p>
+                                    style='font-family:Poppins,sans-serif; font-size:13px; color:grey;'>Captured Img</p>
                             </div>
                         </div>
 
                     </div>
 
-                    <div id='emp_info_box' class="card-body px-3 pt-2 d-flex flex-column gap-2 ">
+                    <div id="emp_info_box" class="card bg-light shadow-sm mb-2 mt-1">
+
+                        <div class="card-body d-flex justify-content-between pt-2 pb-1 px-2">
+                            <label class="card-text fw-semibold" for="">Name</label>
+                            <p id='empid_val' class="card-text"></p>
+                        </div>
+                        <hr class="p-0 m-0">
+                        <div class="card-body d-flex justify-content-between pt-2 pb-1 px-2">
+                            <label class="card-text fw-semibold" for="">MC Code</label>
+                            <p id='mcempid_val' class="card-text"></p>
+                        </div>
+                        <hr class="p-0 m-0">
+                        <div class="card-body d-flex justify-content-between pt-2 pb-1 px-2">
+                            <label class="card-text fw-semibold" for="">Department</label>
+                            <p id='dept_val' class="card-text text-uppercase"></p>
+                        </div>
+                        <hr class="p-0 m-0">
+                        <div class="card-body d-flex justify-content-between pt-2 pb-1 px-2">
+                            <label class="card-text fw-semibold" for="">Designation</label>
+                            <p id='design_val' class="card-text"></p>
+                        </div>
+                        <hr class="p-0 m-0">
+                        <div class="card-body d-flex justify-content-center pt-2 pb-1 px-2">
+                            <div class="row w-100 secondary d-flex justify-content-between py-0 my-0">
+                                <div class="col-4 px-0 py-0 my-0">
+                                    <label class="card-text fw-semibold" for="">Division</label>
+                                </div>
+                                <div class="col-8 d-block px-0 py-0 my-0">
+                                    <p id='div_val' class="card-text text-end"></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                   
+
+                    <!-- <div id='emp_info_box' class="card-body px-3 pt-2 d-flex flex-column gap-2 ">
 
                         <div id='name_box' class="emp_box">
                             <label for="">Name</label>
@@ -150,7 +190,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                             <span>:</span>
                             <p id='div_val' style='margin:0; padding:0px 5px;'>-</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div id="entry_card" class="card shadow mx-2  mt-3 rounded-3">
