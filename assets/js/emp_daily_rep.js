@@ -6,29 +6,34 @@ document.addEventListener('DOMContentLoaded', ()=>{
     
     // UTILS
     function dateForm(dt){
-        let date = new Date(dt);
-    
+        
+        let parts = dt.split(' ');
+        let d = parts[0].split('/'); 
+        let formatted = `${d[2]}/${d[1]}/${d[0]} ${parts[1]}`;
+
+        let date = new Date(formatted); 
+
+        // let date = new Date(dt);
         let day = String(date.getDate()).padStart(2,'0');
         let month = String(date.getMonth()+1).padStart(2,'0');
         let year = date.getFullYear();
-    
+        
         let hours = date.getHours();
         
         // console.log(hours);
-        let ampm = hours > 12 ? 'PM' : 'AM';
+        let ampm = hours >= 12 ? 'PM' : 'AM';
         hours = hours % 12;
         hours = hours == 0 ? 12 : hours;  
 
         hours = String(hours).padStart(2,'0');
         
-
         let minutes = String(date.getMinutes()).padStart(2,'0');
         let seconds = String(date.getSeconds()).padStart(2,'0');
     
         return `${day}/${month}/${year} ${hours}:${minutes}:${seconds} ${ampm}`;
     }
     
-    // console.log(dateForm('03/03/2026 01:59:14'));
+    console.log(dateForm('07/03/2026 09:58:04'));
 
 
 

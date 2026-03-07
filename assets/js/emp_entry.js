@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(!data['status']){   
             
             
-            console.log(data);
+            // console.log(data);
             // return  
             
             emp_img.src = data['user_img'].IMG ? 'data:image/'+ data['user_img'].FTYPE + ';base64,' + data['user_img'].IMG : base_url + 'assets/images/nouserimg.jpg';
@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             //     design: data['user_info'][0].DESIGNATION
             // };
 
-            // console.log(Object.fromEntries(form_datas.entries()));
+            console.log(Object.fromEntries(form_datas.entries()));
             
 
             setTimeout(() => {
