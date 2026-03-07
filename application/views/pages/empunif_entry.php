@@ -47,7 +47,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
                     alt="crlogo" style="filter:invert(0%);">
             
 
-                    <span class="navbar-brand fs-5" style="font-family:Mozilla Headline,sans-serif; font-weight:450;" >Emp Without Uniform ddd</span>
+                    <span class="navbar-brand fs-5" style="font-family:Mozilla Headline,sans-serif; font-weight:450;" >Emp Without Uniform</span>
                     
                     <div class="dropdown">
                         <button class="btn btn-outline-none bg-light fw-bold my-0 py-0 fs-5" data-bs-toggle="dropdown">⋮</button>
