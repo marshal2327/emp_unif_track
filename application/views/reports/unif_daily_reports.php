@@ -21,7 +21,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
 
     <!-- DataTables Bootstrap 5 CSS -->
 <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/empunif_entry.css?v=365">
+<link rel="stylesheet" href="<?php echo base_url()?>assets/css/empunif_entry.css?v=543">
 
 </head>
 
@@ -265,7 +265,7 @@ defined('BASEPATH') or exit('NO DIRECT SCRIPT ACCESS ALLOWED');
         let base_url = "<?php echo base_url()?>";
     </script>
 
-    <script src="<?php echo base_url()?>assets/js/empunif_daily_rep.js?v=587"></script>
+    <script src="<?php echo base_url()?>assets/js/empunif_daily_rep.js?v=433"></script>
 </body>
 
 </html>
